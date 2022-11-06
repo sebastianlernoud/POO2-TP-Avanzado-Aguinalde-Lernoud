@@ -33,7 +33,5 @@ test("Añadir varios productos al paquete",()=>{
 test("Distintos id",()=>{
     let paquete1 = new Paquete("destino 1","Muy rapido");
     let paquete2 = new Paquete("destino 1","Muy rapido");
-    expect(paquete1.id).toBe(1);
-    expect(paquete2.id).toBe(2);
-
-})
+    expect(paquete1.id == paquete2.id).toBeFalsy();
+});
