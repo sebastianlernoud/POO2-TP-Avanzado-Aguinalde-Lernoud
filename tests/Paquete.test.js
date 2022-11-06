@@ -28,3 +28,12 @@ test("Añadir varios productos al paquete",()=>{
     paquete.sumarProducto("Lavarropas",1);
     expect(paquete.mostrarProductos()).toBe("8 unidades de atun, 1 unidades de Lavarropas, ");
 });
+
+
+test("Distintos id",()=>{
+    let paquete1 = new Paquete("destino 1","Muy rapido");
+    let paquete2 = new Paquete("destino 1","Muy rapido");
+    expect(paquete1.id).toBe(1);
+    expect(paquete2.id).toBe(2);
+
+})
