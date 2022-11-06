@@ -1,10 +1,10 @@
 const ProductoCantidad = require("../src/ProductoCantidad")
 
 var Paquete = (function(){
-    var id=1;
+    var contador=1;
     var newPaquete =function(destino,urgencia){
-        this.identificador=id;
-        id++;
+        this.id=contador;
+        contador++;
         this.destino = destino;
         this.urgencia = urgencia;
         this.productos = [];
