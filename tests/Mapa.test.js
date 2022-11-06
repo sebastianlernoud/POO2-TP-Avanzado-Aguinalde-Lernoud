@@ -56,6 +56,7 @@ test("Mover varios paquetes hasta el final del mapa",()=>{
     for (let i=0;i<4;i++){
         mapa.moverPaquetes();
     }
-    expect(mapa.filas[1]).toEqual([paquete1,paquete2]);
+    expect(mapa.filas[4]).toEqual([paquete1,paquete2]);
     expect(mapa.filas[0]).toEqual([]);
+    
 });
