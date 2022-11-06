@@ -1,8 +1,6 @@
 
-
-
 test("Crear un centro",()=> {
-    var centro = new Centro("A","Local");
+    var centro = new Centro("Local");
     expect(centro.tipo).toBe("Local");
 }
 );
