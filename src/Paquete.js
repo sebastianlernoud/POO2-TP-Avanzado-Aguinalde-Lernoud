@@ -1,4 +1,4 @@
-const ProductoCantidad = require("")
+const ProductoCantidad = require("../src/ProductoCantidad")
 
 function Paquete (destino,urgencia){
     var id=0;
