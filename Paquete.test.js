@@ -14,3 +14,10 @@ test("Añadir productos al paquete",()=>{
     paquete.sumarProducto("shampoo",3);
     expect(paquete.productos).toBe("3 unidades de shampoo");
 });
+
+
+test("Añadir otro producto al paquete",()=>{
+    let paquete = new Paquete("destino 1","Muy rapido");
+    paquete.sumarProducto("atun",8);
+    expect(paquete.productos).toBe("8 unidades de atun");
+});
