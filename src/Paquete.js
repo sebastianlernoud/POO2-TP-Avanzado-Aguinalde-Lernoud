@@ -15,7 +15,7 @@ function Paquete (destino,urgencia){
 
     this.mostrarProductos = () => {
         let resultado="";
-        this.productos.forEach(prod => {resultado += prod.informacion+", "});
+        this.productos.forEach(prod => {resultado += prod.informacion()+", "});
         return resultado;
     }
 }
