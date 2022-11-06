@@ -43,6 +43,6 @@ test("Mover un paquete hasta el final del mapa",()=>{
         mapa.moverPaquetes();
     }
     
-    expect(mapa.filas[5]).toEqual([paquete1]);
+    expect(mapa.filas[4]).toEqual([paquete1]);
     expect(mapa.filas[0]).toEqual([]);
 });
