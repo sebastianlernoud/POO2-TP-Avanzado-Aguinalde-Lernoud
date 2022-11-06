@@ -14,3 +14,13 @@ test("Introducir un nuevo paquete al mapa",()=>{
     mapa.enviarPaquete(paquete);
     expect(mapa.filas[0][0]).toBe(paquete);
 });
+
+test("Introducir varios paquetes al mapa",()=>{
+    let paquete1= new Paquete("destino 1","Muy rapido");
+    let paquete2= new Paquete("destino 2","rapido");
+    
+    var mapa = new Mapa(1,5);
+    mapa.enviarPaquete(paquete1);
+    mapa.enviarPaquete(paquete2);
+    expect(mapa.filas[0]).toEqual([paquete1,paquete2]);
+});
