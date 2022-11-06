@@ -24,3 +24,11 @@ test("Introducir varios paquetes al mapa",()=>{
     mapa.enviarPaquete(paquete2);
     expect(mapa.filas[0]).toEqual([paquete1,paquete2]);
 });
+
+test("Mover paquetes del mapa",()=>{
+    let paquete1= new Paquete("destino 1","Muy rapido");
+    var mapa = new Mapa(1,5);
+    mapa.enviarPaquete(paquete1);
+    mapa.moverPaquetes();
+    expect(mapa.filas[1]).toEqual([paquete1]);
+});
