@@ -3,7 +3,7 @@ function Paquete (destino,urgencia){
     this.urgencia = urgencia;
     this.productos;
     this.sumarProducto = (producto,cantidad)=>{
-        this.productos = "3 unidades de shampoo";
+        this.productos = cantidad +" unidades de " + producto;
 
     }
 }
