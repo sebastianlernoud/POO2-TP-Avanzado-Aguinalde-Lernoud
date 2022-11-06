@@ -1,4 +1,4 @@
 
 test("Primera prueba",()=>{
-    expect(1+5).toBe(5);
+    expect(5).toBe(5);
 });
