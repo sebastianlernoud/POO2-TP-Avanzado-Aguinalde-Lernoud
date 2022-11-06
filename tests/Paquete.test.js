@@ -35,3 +35,10 @@ test("Distintos id",()=>{
     let paquete2 = new Paquete("destino 1","Muy rapido");
     expect(paquete1.id == paquete2.id).toBeFalsy();
 });
+
+
+test("Crear mapa",()=>{
+    var mapa = new Mapa(1,5);
+    expect(mapa.filas).toBe(1);
+    expect(mapa.columnas).toBe(5);
+});
