@@ -3,7 +3,7 @@ function Mapa(filas,columnas){
     this.cantidadFilas = filas;
     this.cantidadColumnas=columnas;
     this.filas=[];
-    for (j=0;j<cantidadColumnas;j++){
+    for (let j=0;j<this.cantidadColumnas;j++){
         this.filas[j].push("");
     }
 
