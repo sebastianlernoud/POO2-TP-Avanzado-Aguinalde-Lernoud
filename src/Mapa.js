@@ -16,11 +16,11 @@ function Mapa(filas,columnas){
             this.filas[4].shift();
         }
         for (let i=3; i>=0;i--){
-            this.filas[i].forEach(element,index=>{
+            this.filas[i].forEach((element,index)=>{
                 this.filas[i+1].push(element);
                 this.filas[i][index]=undefined;
             });   
-            this.filas[i].shift();  
+             
         }
     }
 }
