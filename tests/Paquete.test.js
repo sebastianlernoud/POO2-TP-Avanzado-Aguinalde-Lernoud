@@ -12,19 +12,19 @@ test("Crear urgencia de paquete",()=>{
 test("Añadir productos al paquete",()=>{
     let paquete = new Paquete("destino 1","Muy rapido");
     paquete.sumarProducto("Shampoo",3);
-    expect(paquete.mostrarProductos).toBe("3 unidades de Shampoo, ");
+    expect(paquete.mostrarProductos()).toBe("3 unidades de Shampoo, ");
 });
 
 
 test("Añadir otro producto al paquete",()=>{
     let paquete = new Paquete("destino 1","Muy rapido");
     paquete.sumarProducto("atun",8);
-    expect(paquete.mostrarProductos).toBe("8 unidades de atun, ");
+    expect(paquete.mostrarProductos()).toBe("8 unidades de atun, ");
 });
 
 test("Añadir varios productos al paquete",()=>{
     let paquete = new Paquete("destino 1","Muy rapido");
     paquete.sumarProducto("atun",8);
     paquete.sumarProducto("Lavarropas",1);
-    expect(paquete.mostrarProductos).toBe("8 unidades de atun, 1 unidades de Lavarropas, ");
+    expect(paquete.mostrarProductos()).toBe("8 unidades de atun, 1 unidades de Lavarropas, ");
 });
