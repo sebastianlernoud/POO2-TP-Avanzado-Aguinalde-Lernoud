@@ -12,9 +12,14 @@ function Mapa(filas,columnas){
     }
 
     this.moverPaquetes = () => {
-        for (let i=0; i<this.cantidadColumnas-1;i++){
-            this.filas[i+1].push(this.filas[i][0]);
-            this.filas[i].shift();
+        if(this.filas[4].length>0){
+            this.filas[4].shift();
+        }
+        for (let i=3; i>=0;i--){
+            this.filas[i].forEach(element=>{
+                this.filas[i+1].push(element);
+                this.filas[i].shift();
+            });     
         }
     }
 }
