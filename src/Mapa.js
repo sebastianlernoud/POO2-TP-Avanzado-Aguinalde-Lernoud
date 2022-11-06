@@ -4,7 +4,7 @@ function Mapa(filas,columnas){
     this.cantidadColumnas=columnas;
     this.filas=[];
     for (let j=0;j<this.cantidadColumnas;j++){
-        this.filas[j].push("");
+        this.filas.push("");
     }
 
 }
