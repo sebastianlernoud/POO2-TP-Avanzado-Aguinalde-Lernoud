@@ -1,3 +1,5 @@
+const Mapa = require("../src/Mapa")
+
 test("Crear mapa",()=>{
     var mapa = new Mapa(1,5);
     expect(mapa.filas).toBe(1);
