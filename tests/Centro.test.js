@@ -11,5 +11,5 @@ test("Manejar paquetes",()=>{
     var centro = new Centro("Local");
 
     centro.recibirPaquete(paquete);
-    expect(centro.colaDeEspera()).toEqual([paquete]);
+    expect(centro.cola).toEqual([paquete]);
 });
