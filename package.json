@@ -1,0 +1,27 @@
+{
+  "name": "poo2-tp-avanzado-aguinalde-lernoud",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "testpush": "git add . && git commit -m \"TDD iteration\" && git push && jest"
+  },
+  "dependencies": {
+    "jest": "^29.2.2"
+  },
+  "main": "prueba.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianlernoud/POO2-TP-Avanzado-Aguinalde-Lernoud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianlernoud/POO2-TP-Avanzado-Aguinalde-Lernoud/issues"
+  },
+  "homepage": "https://github.com/sebastianlernoud/POO2-TP-Avanzado-Aguinalde-Lernoud#readme"
+}
