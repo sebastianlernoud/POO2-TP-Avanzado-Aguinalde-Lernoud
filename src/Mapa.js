@@ -10,5 +10,10 @@ function Mapa(filas,columnas){
     this.enviarPaquete = (paquete) =>{
         this.filas[0].push(paquete);
     }
+
+    this.moverPaquetes = () => {
+        this.filas[1].push(this.filas[0][0]);
+        this.filas[0].shift();
+    }
 }
 module.exports=Mapa;
