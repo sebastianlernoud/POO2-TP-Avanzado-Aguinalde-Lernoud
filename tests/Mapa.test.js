@@ -52,9 +52,10 @@ test("Mover varios paquetes hasta el final del mapa",()=>{
     var mapa = new Mapa(1,5);
     mapa.enviarPaquete(paquete1);
     mapa.enviarPaquete(paquete2);
-    for (let i=0;i<4;i++){
-        mapa.moverPaquetes();
-    }
-    expect(mapa.filas[4]).toEqual([paquete1,paquete2]);
+    mapa.moverPaquetes();
+    // for (let i=0;i<4;i++){
+    //     mapa.moverPaquetes();
+    // }
+    expect(mapa.filas[1]).toEqual([paquete1,paquete2]);
     expect(mapa.filas[0]).toEqual([]);
 });
