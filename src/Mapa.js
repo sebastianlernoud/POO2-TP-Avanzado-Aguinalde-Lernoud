@@ -7,5 +7,8 @@ function Mapa(filas,columnas){
         this.filas.push([]);
     }
 
+    this.enviarPaquete = (paquete) =>{
+        this.filas[0].push(paquete);
+    }
 }
 module.exports=Mapa;
