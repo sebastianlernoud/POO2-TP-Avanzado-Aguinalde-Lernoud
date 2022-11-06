@@ -1,6 +1,6 @@
 function Centro (tipo) {
     this.tipo = tipo;
-    cola=[];
+    this.cola=[];
     this.recibirPaquete = (paquete) => {
         this.cola.push(paquete);
     }
