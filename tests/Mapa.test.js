@@ -33,3 +33,16 @@ test("Mover paquetes del mapa",()=>{
     expect(mapa.filas[1]).toEqual([paquete1]);
     expect(mapa.filas[0]).toEqual([]);
 });
+
+
+test("Mover un paquete hasta el final del mapa",()=>{
+    let paquete1= new Paquete("destino 1","Muy rapido");
+    var mapa = new Mapa(1,5);
+    mapa.enviarPaquete(paquete1);
+    for (let i=0;i<5;i++){
+        mapa.moverPaquetes();
+    }
+    
+    expect(mapa.filas[5]).toEqual([paquete1]);
+    expect(mapa.filas[0]).toEqual([]);
+});
