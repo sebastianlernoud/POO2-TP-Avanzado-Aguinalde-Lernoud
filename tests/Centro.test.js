@@ -19,7 +19,7 @@ test("Manejar paquetes",()=>{
 
 test("Procesar 1 paquete en centro de calidad",()=>{
     var paquete= new Paquete();
-    var centro = new Centro("Centro de calidad",2);
+    var centro = new Centro(new Calidad(),2);
 
     centro.recibirPaquete(paquete);
     centro.procesarPaquetes();
