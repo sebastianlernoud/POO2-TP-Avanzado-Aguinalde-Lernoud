@@ -19,6 +19,11 @@ function Centro (tipo,longitudCola) {
                 let paquete=this.colaDeEspera.shift();
                 this.colaDeSalida.push(paquete);
             }
+        } else if(this.tipo==="Centro de distribucion"){
+            for (let i=0;i<10;i++){
+                let paquete=this.colaDeEspera.shift();
+                this.colaDeSalida.push(paquete);
+            }
         }
         
     }
