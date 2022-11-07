@@ -88,7 +88,7 @@ test("Error por mas de cinco paquetes desde un local",()=>{
 
 
 test("Pasar un paquete de Local a Centro de Facturacion",()=>{
-    var local = Local();
+    var local = new Local();
     var centroFacturacion = new Centro(new Facturacion(),3);
     local.crearPaquetes(1);
     local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);
