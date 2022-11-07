@@ -3,6 +3,7 @@ const Paquete = require("../src/Paquete");
 const Distribucion=require("../src/Distribucion");
 const Calidad = require("../src/Calidad");
 const Facturacion = require("../src/Facturacion");
+const Local=require("../src/Local");
 test("Crear un centro",()=> {
     var centro = new Centro("Local");
     expect(centro.tipo).toBe("Local");
