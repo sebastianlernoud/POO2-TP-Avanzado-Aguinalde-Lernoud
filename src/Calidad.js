@@ -1,7 +1,7 @@
 function Calidad(){
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
-        let paquete=this.colaDeEspera.shift();
-        this.colaDeSalida.push(paquete);
+        let paquete=colaDeEspera.shift();
+        colaDeSalida.push(paquete);
     }
 }
 
