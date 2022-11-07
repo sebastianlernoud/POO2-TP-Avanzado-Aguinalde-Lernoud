@@ -26,11 +26,23 @@ test("Procesar paquetes",()=>{
 test("Procesar paquetes en un centro de calidad",()=>{
     var paquete1= new Paquete();
     var paquete2= new Paquete();
-    var centro = new Centro("Local",2);
+    var centro = new Centro("Centro de calidad",2);
 
     centro.recibirPaquete(paquete1);
     centro.recibirPaquete(paquete2);
     centro.procesarPaquetes();
     expect(centro.colaDeSalida).toEqual([paquete1]);
     expect(centro.colaDeEspera).toEqual([paquete2]);
+});
+
+test("Procesar paquetes en un centro de facturacion",()=>{
+    var paquete1= new Paquete();
+    var paquete2= new Paquete();
+    var centro = new Centro("Centro de facturacion",2);
+
+    centro.recibirPaquete(paquete1);
+    centro.recibirPaquete(paquete2);
+    centro.procesarPaquetes();
+    expect(centro.colaDeSalida).toEqual([paquete1,paquete2]);
+    expect(centro.colaDeEspera).toEqual([]);
 });
