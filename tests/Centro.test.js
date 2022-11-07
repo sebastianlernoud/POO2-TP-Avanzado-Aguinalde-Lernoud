@@ -70,6 +70,6 @@ test("Crear un local",()=>{
 
 test("Generar un paquete desde un local",()=>{
     var local = new Local();
-    local.crearPaquetes();
+    local.crearPaquetes(1);
     expect(local.colaDeSalida.length).toBe(1);
 });
