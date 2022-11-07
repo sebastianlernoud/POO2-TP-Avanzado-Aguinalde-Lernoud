@@ -12,4 +12,4 @@ test("Manejar paquetes",()=>{
 
     centro.recibirPaquete(paquete);
     expect(centro.cola).toEqual([paquete]);
-});
+});   
