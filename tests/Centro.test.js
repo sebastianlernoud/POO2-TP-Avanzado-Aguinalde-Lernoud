@@ -8,8 +8,8 @@ test("Crear un centro",()=> {
 
 test("Manejar paquetes",()=>{
     var paquete= new Paquete();
-    var centro = new Centro("Local");
+    var centro = new Centro("Local",2);
 
     centro.recibirPaquete(paquete);
-    expect(centro.cola).toEqual([paquete]);
+    expect(centro.colaDeEspera).toEqual([paquete]);
 });   
