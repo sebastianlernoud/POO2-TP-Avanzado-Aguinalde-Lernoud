@@ -73,3 +73,15 @@ test("Generar un paquete desde un local",()=>{
     local.crearPaquetes(1);
     expect(local.colaDeSalida.length).toBe(1);
 });
+
+test("Generar cinco paquetes desde un local",()=>{
+    var local = new Local();
+    local.crearPaquetes(5);
+    expect(local.colaDeSalida.length).toBe(5);
+});
+
+test("Error por mas de cinco paquetes desde un local",()=>{
+    var local = new Local();
+    
+    expect(()=>{local.crearPaquetes(6);}).toThrow(new Error("No se pueden crear mas de cinco paquetes"));
+});
