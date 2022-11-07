@@ -61,3 +61,8 @@ test("Procesar paquetes en un centro de distribucion",()=>{
     expect(centro.colaDeSalida).toEqual([paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete]);
     expect(centro.colaDeEspera).toEqual([]);
 });
+
+test("Generar paquetes desde un local",()=>{
+    var local = new Local();
+    expect(local.colaDeSalida).toEqual([]);
+});
