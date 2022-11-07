@@ -13,3 +13,12 @@ test("Manejar paquetes",()=>{
     centro.recibirPaquete(paquete);
     expect(centro.colaDeEspera).toEqual([paquete]);
 });   
+
+test("Procesar paquetes",()=>{
+    var paquete= new Paquete();
+    var centro = new Centro("Local",2);
+
+    centro.recibirPaquete(paquete);
+    centro.procesarPaquetes();
+    expect(centro.colaDeSalida).toEqual([paquete]);
+})
