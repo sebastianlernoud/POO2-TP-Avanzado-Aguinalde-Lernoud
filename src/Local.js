@@ -11,7 +11,11 @@ function Local(){
             this.colaDeSalida.push(new Paquete());
         }
     }
-    
+    this.traspasarPaquete=(paquete,centro)=>{
+        var paquete = this.colaDeSalida.find(element=> element==paquete)
+        centro.recibirPaquete(paquete);
+
+    }
     
 }
 
