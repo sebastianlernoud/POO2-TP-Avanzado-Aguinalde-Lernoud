@@ -11,20 +11,7 @@ function Centro (tipo,longitudCola) {
         }
     }
     this.procesarPaquetes=()=>{
-        if (this.tipo==="Centro de calidad"){
-            let paquete=this.colaDeEspera.shift();
-            this.colaDeSalida.push(paquete);
-        } else if (this.tipo==="Centro de facturacion"){
-            for (let i=0;i<3;i++){
-                let paquete=this.colaDeEspera.shift();
-                this.colaDeSalida.push(paquete);
-            }
-        } else if(this.tipo==="Centro de distribucion"){
-            for (let i=0;i<10;i++){
-                let paquete=this.colaDeEspera.shift();
-                this.colaDeSalida.push(paquete);
-            }
-        }
+        this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
         
     }
 }

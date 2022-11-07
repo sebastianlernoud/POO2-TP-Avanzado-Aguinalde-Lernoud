@@ -1,5 +1,8 @@
-const Centro = require("../src/Centro")
-const Paquete = require("../src/Paquete")
+const Centro = require("../src/Centro");
+const Paquete = require("../src/Paquete");
+const Distribucion=require("../src/Distribucion");
+const Calidad = require("../src/Calidad");
+const Facturacion = require("../src/Facturacion");
 test("Crear un centro",()=> {
     var centro = new Centro("Local");
     expect(centro.tipo).toBe("Local");
@@ -26,7 +29,7 @@ test("Procesar 1 paquete en centro de calidad",()=>{
 test("Procesar paquetes en un centro de calidad",()=>{
     var paquete1= new Paquete();
     var paquete2= new Paquete();
-    var centro = new Centro("Centro de calidad",2);
+    var centro = new Centro(new Calidad(),2);
 
     centro.recibirPaquete(paquete1);
     centro.recibirPaquete(paquete2);
@@ -38,7 +41,7 @@ test("Procesar paquetes en un centro de calidad",()=>{
 test("Procesar paquetes en un centro de facturacion",()=>{
     var paquete1= new Paquete();
     var paquete2= new Paquete();
-    var centro = new Centro("Centro de facturacion",2);
+    var centro = new Centro(new Facturacion(),2);
 
     centro.recibirPaquete(paquete1);
     centro.recibirPaquete(paquete2);
@@ -49,7 +52,7 @@ test("Procesar paquetes en un centro de facturacion",()=>{
 
 test("Procesar paquetes en un centro de distribucion",()=>{
     var paquete= new Paquete();
-    var centro = new Centro("Centro de distribucion",10);
+    var centro = new Centro(new Distribucion(),10);
     for (let i=0;i<10;i++){
         centro.recibirPaquete(paquete);
     }
