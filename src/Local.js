@@ -11,7 +11,7 @@ function Local(){
             this.colaDeSalida.push(new Paquete());
         }
     }
-
+    
     
 }
 

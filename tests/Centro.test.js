@@ -85,3 +85,13 @@ test("Error por mas de cinco paquetes desde un local",()=>{
     
     expect(()=>{local.crearPaquetes(6);}).toThrow(new Error("La cantidad no es valida"));
 }); 
+
+
+test("Pasar un paquete de Local a Centro de Facturacion",()=>{
+    var local = Local();
+    var centroFacturacion = new Centro(new Facturacion(),3);
+    local.crearPaquetes(1);
+    local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);
+    expect(local.colaDeSalida).toEqual([]);
+    expect(centroFacturacion.colaDeEspera.length).toBe(1);
+});
