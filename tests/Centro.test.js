@@ -14,9 +14,9 @@ test("Manejar paquetes",()=>{
     expect(centro.colaDeEspera).toEqual([paquete]);
 });   
 
-test("Procesar paquetes",()=>{
+test("Procesar 1 paquete en centro de calidad",()=>{
     var paquete= new Paquete();
-    var centro = new Centro("Local",2);
+    var centro = new Centro("Centro de calidad",2);
 
     centro.recibirPaquete(paquete);
     centro.procesarPaquetes();
