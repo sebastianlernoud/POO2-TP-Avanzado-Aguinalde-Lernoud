@@ -95,3 +95,14 @@ test("Pasar un paquete de Local a Centro de Facturacion",()=>{
     expect(local.colaDeSalida).toEqual([]);
     expect(centroFacturacion.colaDeEspera.length).toBe(1);
 });
+
+test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de 3",()=>{
+    var local = new Local();
+    var centroFacturacion = new Centro(new Facturacion(),3);
+    local.crearPaquetes(4);
+    for (let i=0;i<3;i++){
+        local.traspasarPaquete(local.colaDeSalida[i],centroFacturacion);
+    }
+    expect(()=>{local.traspasarPaquete(local.colaDeSalida[i],centroFacturacion);}).toThrow(new Error("Cola de entrada llena"));
+    
+});
