@@ -107,3 +107,10 @@ test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de
     
 });
 
+test("Despachar a destino",()=>{
+    var distribucion=new Centro(new Distribucion(),5);
+    var paquete = new Paquete("Destino 1","Rapido",4);
+    distribucion.recibirPaquete(paquete);
+    let id =paquete.id;
+    expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id+" al Destino 1, ttl=3");
+});
