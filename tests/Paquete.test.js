@@ -55,3 +55,10 @@ test("Urgencia rapida de paquetes con 6 columnas",()=>{
     var paquete = new Paquete("Destino 1","Rapido",6);
     expect(paquete.ttl).toBe(9);
 });
+
+test("Disminucion de time to live",()=>{
+    var paquete = new Paquete("Destino 1","Rapido",6);
+    expect(paquete.ttl).toBe(9)
+    paquete.pasarTurno();
+    expect(paquete.ttl).toBe(8);
+});
