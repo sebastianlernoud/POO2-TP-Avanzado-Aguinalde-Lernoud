@@ -7,7 +7,7 @@ function Distribucion(){
         return this.despacharPaquetes(colaDeSalida);
     }
     this.despacharPaquetes = (colaDeSalida) => {
-        var texto = "Entregando el paquete id ";
+        var texto = "Entregando paquete id ";
         
         texto += colaDeSalida[0].id+" al "+colaDeSalida[0].destino+", ttl="+colaDeSalida[0].ttl;
          
