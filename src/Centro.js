@@ -11,6 +11,7 @@ function Centro (tipo,longitudCola) {
         }
     }
     this.procesarPaquetes=()=>{
+        
         this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
         
     }

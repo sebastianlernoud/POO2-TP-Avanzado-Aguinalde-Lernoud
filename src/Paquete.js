@@ -26,6 +26,10 @@ var Paquete = (function(){
             this.productos.forEach(prod => {resultado += prod.informacion()+", "});
             return resultado;
         }
+
+        this.pasarTurno= () => {
+            this.ttl-=1;
+        }
     }
     return newPaquete;
 }) ();
