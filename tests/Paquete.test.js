@@ -36,7 +36,18 @@ test("Distintos id",()=>{
     expect(paquete1.id == paquete2.id).toBeFalsy();
 });
 
-test("Urgencia de paquetes con 4 columnas",()=>{
+test("Urgencia muy rapida de paquetes con 4 columnas",()=>{
     var paquete = new Paquete("Destino 1","Muy rapido",4);
     expect(paquete.ttl).toBe(4);
+});
+
+
+test("Urgencia rapida de paquetes con 4 columnas",()=>{
+    var paquete = new Paquete("Destino 1","Rapido",4);
+    expect(paquete.ttl).toBe(6);
+});
+
+test("Urgencia de paquetes normales con 4 columnas",()=>{
+    var paquete = new Paquete("Destino 1","Normal",4);
+    expect(paquete.ttl).toBe(8);
 });
