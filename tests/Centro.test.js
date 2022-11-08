@@ -106,3 +106,4 @@ test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de
     expect(()=>{local.traspasarPaquete(local.colaDeSalida[3],centroFacturacion);}).toThrow(new Error("Cola de espera llena"));
     
 });
+
