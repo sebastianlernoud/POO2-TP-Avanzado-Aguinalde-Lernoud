@@ -51,3 +51,7 @@ test("Urgencia de paquetes normales con 4 columnas",()=>{
     var paquete = new Paquete("Destino 1","Normal",4);
     expect(paquete.ttl).toBe(8);
 });
+test("Urgencia rapida de paquetes con 6 columnas",()=>{
+    var paquete = new Paquete("Destino 1","Rapido",6);
+    expect(paquete.ttl).toBe(9);
+});
