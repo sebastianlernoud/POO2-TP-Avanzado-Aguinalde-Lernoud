@@ -7,11 +7,12 @@ function Distribucion(){
         return this.despacharPaquetes(colaDeSalida);
     }
     this.despacharPaquetes = (colaDeSalida) => {
-        var texto = "Entregando paquete id ";
-        
-        texto += colaDeSalida[0].id+" al "+colaDeSalida[0].destino+", ttl="+colaDeSalida[0].ttl;
-         
-        return texto;
+        var texto ="";
+        colaDeSalida.forEach(paquete=>{
+            texto +="Entregando paquete id "+ paquete.id+" al "+paquete.destino+", ttl="+paquete.ttl+"\n";
+
+        }); 
+        return texto.slice(0,-1);
     }
 }
 

@@ -11,7 +11,9 @@ function Centro (tipo,longitudCola) {
         }
     }
     this.procesarPaquetes=()=>{
-        this.colaDeEspera[0].pasarTurno();
+        this.colaDeEspera.forEach(paquete => {
+            paquete.pasarTurno();
+        })
         return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
         
     }
