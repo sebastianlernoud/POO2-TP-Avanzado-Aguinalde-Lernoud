@@ -1,8 +1,11 @@
 function Distribucion(){
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
-        for (let i=0;i<10;i++){
-            let paquete=colaDeEspera.shift();
-            colaDeSalida.push(paquete);
+        let i=0;
+        let paquete;
+        while (i<10 || colaDeEspera.length>0){
+            paquete=colaDeEspera.shift();
+            colaDeSalida.push(paquete);  
+            i+=1
         }
         return this.despacharPaquetes(colaDeSalida);
     }
