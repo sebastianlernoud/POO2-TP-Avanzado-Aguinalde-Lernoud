@@ -7,7 +7,13 @@ var Paquete = (function(){
         contador++;
         this.destino = destino;
         this.urgencia = urgencia;
-        
+        if (urgencia=="Muy rapido"){
+            this.ttl=columnas;
+        }else if(urgencia=="Rapido"){
+            this.ttl = columnas+columnas*0.5
+        } else{
+            this.ttl=2*columnas;
+        }
         this.productos = [];
         this.sumarProducto = (producto,cantidad)=>{
             let prodCant = new ProductoCantidad(producto,cantidad);
