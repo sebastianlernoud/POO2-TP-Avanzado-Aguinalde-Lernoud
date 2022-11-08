@@ -4,6 +4,14 @@ function Distribucion(){
             let paquete=colaDeEspera.shift();
             colaDeSalida.push(paquete);
         }
+        return this.despacharPaquetes(colaDeSalida);
+    }
+    this.despacharPaquetes = (colaDeSalida) => {
+        var texto = "Entregando el paquete id ";
+        
+        texto += colaDeSalida[0].id+" al "+colaDeSalida[0].destino+", ttl="+colaDeSalida[0].ttl;
+         
+        return texto;
     }
 }
 
