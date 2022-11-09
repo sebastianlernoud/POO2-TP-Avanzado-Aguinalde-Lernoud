@@ -11,7 +11,7 @@ function Distribucion(){
             
             i+=1;
         }
-        return texto.slice(0,-1) +i;
+        return texto.slice(0,-1)+colaDeEspera;
     }
 }
 
