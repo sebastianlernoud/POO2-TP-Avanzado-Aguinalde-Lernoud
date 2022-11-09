@@ -59,7 +59,6 @@ test("Procesar paquetes en un centro de distribucion",()=>{
     }
     
     centro.procesarPaquetes();
-    expect(centro.colaDeSalida).toEqual([paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete,paquete]);
     expect(centro.colaDeEspera).toEqual([]);
 });
 
