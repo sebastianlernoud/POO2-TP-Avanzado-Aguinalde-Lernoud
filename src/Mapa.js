@@ -7,6 +7,10 @@ function Mapa(filas,columnas){
         this.filas.push(centro);
     }
 
+    this.pasarTurno=()=>{
+        this.filas[0].crearPaquetes(4);
+    }
+
     this.enviarPaquete = (paquete) =>{
         this.filas[0].push(paquete);
     }
