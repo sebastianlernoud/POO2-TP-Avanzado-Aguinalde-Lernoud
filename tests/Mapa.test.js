@@ -92,3 +92,19 @@ test("Crear un paquete desde la matriz",()=>{
     mapa.pasarTurno();
     expect(mapa.filas[0].colaDeSalida.length>0).toBeTruthy();
 });
+
+test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
+    var mapa = new Mapa(1,4);
+    let local=new Local();
+    let facturacion=new Centro(new Facturacion(),5);
+    let calidad = new Centro(new Calidad(),5);
+    let distribucion = new Centro(new Distribucion(),5);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    mapa.pasarTurno();
+    mapa.pasarTurno();
+    expect(mapa.filas[1].colaDeSalida.length>0).toBeTruthy();
+    expect(facturacion.colaDeSalida[0].ttl).toBe(5);
+});
