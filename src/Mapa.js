@@ -3,8 +3,8 @@ function Mapa(filas,columnas){
     this.cantidadFilas = filas;
     this.cantidadColumnas=columnas;
     this.filas=[];
-    for (let j=0;j<this.cantidadColumnas;j++){
-        this.filas.push([]);
+    this.agregarCentro=(centro)=>{
+        this.filas.push(centro);
     }
 
     this.enviarPaquete = (paquete) =>{
