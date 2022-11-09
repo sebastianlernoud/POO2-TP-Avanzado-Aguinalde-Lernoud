@@ -3,7 +3,7 @@ function Distribucion(){
         let i=0;
         var texto ="";
         let paquete;
-        while (i<10 || colaDeEspera.length>0){
+        while (i<10 && colaDeEspera.length>0){
             paquete=colaDeEspera.shift();
             if (paquete!=undefined){
                 texto +="Entregando paquete id "+ paquete.id+" al "+paquete.destino+", ttl="+paquete.ttl+"\n";
@@ -11,7 +11,7 @@ function Distribucion(){
             
             i+=1;
         }
-        return texto.slice(0,-1)+colaDeEspera;
+        return texto.slice(0,-1);
     }
 }
 
