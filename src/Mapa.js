@@ -8,10 +8,10 @@ function Mapa(filas,columnas){
     }
 
     this.pasarTurno=()=>{
-        if (this.filas[0].length!=0){
+        if (this.filas[0].colaDeSalida.length!=0){
             this.filas[0].traspasarPaquete(this.filas[0].colaDeSalida[0],this.filas[1]);
         }
-        this.filas[0].crearPaquetes(4);
+        this.filas[0].crearPaquetes(4,this.cantidadColumnas);
         
     }
 
