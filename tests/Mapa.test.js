@@ -81,7 +81,7 @@ test("Armar matriz con centros",()=>{
 
 test("Crear un paquete desde la matriz",()=>{
     var mapa = new Mapa(1,4);
-    let local=new Centro(new Local(),5)
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
     let distribucion = new Centro(new Distribucion(),5);
