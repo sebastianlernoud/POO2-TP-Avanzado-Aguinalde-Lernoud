@@ -1,20 +1,13 @@
 function Distribucion(){
-    this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
+    this.procesarPaquetes=(colaDeEspera)=>{
         let i=0;
+        var texto ="";
         let paquete;
         while (i<10 || colaDeEspera.length>0){
             paquete=colaDeEspera.shift();
-            colaDeSalida.push(paquete);  
-            i+=1
-        }
-        return this.despacharPaquetes(colaDeSalida);
-    }
-    this.despacharPaquetes = (colaDeSalida) => {
-        var texto ="";
-        colaDeSalida.forEach(paquete=>{
             texto +="Entregando paquete id "+ paquete.id+" al "+paquete.destino+", ttl="+paquete.ttl+"\n";
-
-        }); 
+            i+=1;
+        }
         return texto.slice(0,-1);
     }
 }
