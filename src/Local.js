@@ -12,6 +12,7 @@ function Local(){
         }
     }
     this.traspasarPaquete=(paquete,centro)=>{
+        paquete.pasarTurno();
         var index = this.colaDeSalida.findIndex(element=> element==paquete);
         var paquete=this.colaDeSalida[index];
         this.colaDeSalida.splice(index,1);
