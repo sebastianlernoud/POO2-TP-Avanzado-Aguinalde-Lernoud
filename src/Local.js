@@ -12,11 +12,15 @@ function Local(){
         }
     }
     this.traspasarPaquete=(paquete,centro)=>{
-        paquete.pasarTurno();
+        
         var index = this.colaDeSalida.findIndex(element=> element==paquete);
-        var paquete=this.colaDeSalida[index];
-        this.colaDeSalida.splice(index,1);
-        centro.recibirPaquete(paquete);
+        if (index!=-1){
+            var paquete=this.colaDeSalida[index];
+            this.colaDeSalida.splice(index,1);
+            centro.recibirPaquete(paquete);
+            paquete.pasarTurno();
+        }
+        
     }
     
 }
