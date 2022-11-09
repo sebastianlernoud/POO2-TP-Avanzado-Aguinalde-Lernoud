@@ -105,6 +105,6 @@ test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
     mapa.agregarCentro(distribucion);
     mapa.pasarTurno();
     mapa.pasarTurno();
-    expect(mapa.filas[1].colaDeSalida.length>0).toBeTruthy();
+    expect(mapa.filas[1].colaDeEspera.length>0).toBeTruthy();
     expect(facturacion.colaDeSalida[0].ttl).toBe(5);
 });
