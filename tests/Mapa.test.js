@@ -76,7 +76,19 @@ test("Armar matriz con centros",()=>{
     mapa.agregarCentro(facturacion);
     mapa.agregarCentro(calidad);
     mapa.agregarCentro(distribucion);
-    
     expect(mapa.filas).toEqual([local,facturacion,calidad,distribucion]);
+});
 
+test("Crear un paquete desde la matriz",()=>{
+    var mapa = new Mapa(1,4);
+    let local=new Centro(new Local(),5)
+    let facturacion=new Centro(new Facturacion(),5);
+    let calidad = new Centro(new Calidad(),5);
+    let distribucion = new Centro(new Distribucion(),5);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    mapa.pasarTurno();
+    expect(mapa.filas[0].colaDeSalida.length>0).toBeTruthy();
 });
