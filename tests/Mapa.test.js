@@ -1,3 +1,8 @@
+const Calidad = require("../src/Calidad");
+const Centro = require("../src/Centro");
+const Distribucion = require("../src/Distribucion");
+const Facturacion = require("../src/Facturacion");
+const Local = require("../src/Local");
 const Mapa = require("../src/Mapa")
 const Paquete = require("../src/Paquete")
 
@@ -59,4 +64,19 @@ test("Mover varios paquetes hasta el final del mapa",()=>{
     expect(mapa.filas[4]).toEqual([paquete1,paquete2]);
     expect(mapa.filas[0]).toEqual([]);
     
+});
+
+test("Armar matriz con centros",()=>{
+    var mapa = new Mapa(1,4);
+    let local=new Centro(new Local(),5)
+    let facturacion=new Centro(new Facturacion(),5);
+    let calidad = new Centro(new Calidad(),5);
+    let distribucion = new Centro(new Distribucion(),5);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    
+    expect(mapa.filas).toEqual([local,facturacion,calidad,distribucion]);
+
 });
