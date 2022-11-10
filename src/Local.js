@@ -13,7 +13,7 @@ function Local(){
     }
     this.traspasarPaquete=(paquete,centro)=>{
         
-        var index = this.colaDeSalida.findIndex(element=> element==paquete);
+        var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
         if (index!=-1){
             var paquete=this.colaDeSalida[index];
             this.colaDeSalida.splice(index,1);
