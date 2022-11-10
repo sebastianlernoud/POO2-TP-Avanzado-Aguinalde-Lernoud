@@ -100,10 +100,9 @@ test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de
     var centroFacturacion = new Centro(new Facturacion(),3);
     local.crearPaquetes(5,4);
     for (let i=0;i<3;i++){
-        local.traspasarPaquete(local.colaDeSalida[i],centroFacturacion);
+        local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);
     }
-    expect(local.colaDeSalida[4]).toBeDefined();
-    //expect(()=>{local.traspasarPaquete(local.colaDeSalida[3],centroFacturacion);}).toThrow(new Error("Cola de espera llena"));
+    expect(()=>{local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);}).toThrow(new Error("Cola de espera llena"));
     
 });
 
