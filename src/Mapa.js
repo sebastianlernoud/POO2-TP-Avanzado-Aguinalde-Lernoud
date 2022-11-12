@@ -8,27 +8,14 @@ function Mapa(filas,columnas){
     }
 
     this.pasarTurno=()=>{
-        if (this.filas[0].colaDeSalida.length!=0){
-            this.filas[0].traspasarPaquete(this.filas[0].colaDeSalida[0],this.filas[1]);
+        let texto = this.filas[-1].procesarPaquetes();
+        for (let i=this.cantidadColumnas-2;i>=0;i--){
+            if (this.filas[i].colaDeSalida.length!=0){
+                this.filas[i].traspasarPaquete(this.filas[i].colaDeSalida[i],this.filas[i+1]);
+            }
         }
-        this.filas[0].crearPaquetes(4,this.cantidadColumnas);
-        
-    }
-
-    this.enviarPaquete = (paquete) =>{
-        this.filas[0].push(paquete);
-    }
-
-    this.moverPaquetes = () => {
-        if(this.filas[4].length>0){
-            this.filas[4].shift();
-        }
-        for (let i=3; i>=0;i--){
-            this.filas[i].forEach((element,index)=>{
-                this.filas[i+1].push(element);
-                this.filas[i][index]=undefined;
-            });   
-             
+        if (this.filas[0].colaDeSalida.length==0){
+            this.filas[0].crearPaquetes(4,this.cantidadColumnas);
         }
     }
 }

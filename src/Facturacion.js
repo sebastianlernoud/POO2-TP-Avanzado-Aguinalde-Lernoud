@@ -5,6 +5,10 @@ function Facturacion(){
             colaDeSalida.push(paquete);
         }
     }
+
+    this.traspasarPaquete = (colaDeEspera,colaDeSalida) =>{
+        this.procesarPaquetes(colaDeEspera,colaDeSalida);
+    }
 }
 
 module.exports=Facturacion;

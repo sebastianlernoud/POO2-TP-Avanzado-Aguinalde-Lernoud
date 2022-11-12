@@ -17,6 +17,15 @@ function Centro (tipo,longitudCola) {
         return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
         
     }
+    this.traspasarPaquete=(paquete,centro)=>{
+        var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
+        if (index!=-1){
+            var paquete=this.colaDeSalida[index];
+            this.colaDeSalida.splice(index,1);
+            centro.recibirPaquete(paquete);
+            paquete.pasarTurno();
+        }
+    }
 }
 
 module.exports=Centro; 
