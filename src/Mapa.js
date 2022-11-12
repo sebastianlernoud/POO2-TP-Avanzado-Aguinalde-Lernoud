@@ -10,8 +10,8 @@ function Mapa(filas,columnas){
     this.pasarTurno=()=>{
         //let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
         for (let i=this.cantidadColumnas-2;i>0;i--){
-            if (this.filas[i].colaDeEspera.length!=0){
-                this.filas[i].procesarPaquetes();
+            this.filas[i].procesarPaquetes();
+            if (this.filas[i].colaDeSalida.length!=0){
                 this.filas[i].traspasarPaquete(this.filas[i].colaDeSalida[0],this.filas[i+1]);
             }
         }
