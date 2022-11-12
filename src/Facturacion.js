@@ -1,8 +1,10 @@
 function Facturacion(){
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
-        for (let i=0;i<3;i++){
+        let i=0;
+        while (i<0 && colaDeEspera.length!=0){
             let paquete=colaDeEspera.shift();
             colaDeSalida.push(paquete);
+            i++;
         }
     }
 }
