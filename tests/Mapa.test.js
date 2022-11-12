@@ -6,9 +6,10 @@ const Local = require("../src/Local");
 const Mapa = require("../src/Mapa");
 const Paquete = require("../src/Paquete");
 
+var mapa;
 beforeEach(()=>{
-    var mapa = new Mapa(1,4);
-})
+    mapa = new Mapa(1,4);
+});
 
 test("Crear mapa",()=>{
     expect(mapa.cantidadFilas).toBe(1);
