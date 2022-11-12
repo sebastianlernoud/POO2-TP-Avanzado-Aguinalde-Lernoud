@@ -27,7 +27,7 @@ var Paquete = (function(){
             return resultado;
         }
 
-        this.pasarTurno= () => {
+        this.disminuirTTL= () => {
             this.ttl-=1;
         }
     }

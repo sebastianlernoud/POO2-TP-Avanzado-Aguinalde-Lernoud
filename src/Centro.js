@@ -12,10 +12,9 @@ function Centro (tipo,longitudCola) {
     }
     this.procesarPaquetes=()=>{
         this.colaDeEspera.forEach(paquete => {
-            paquete.pasarTurno();
+            paquete.disminuirTTL();
         })
         return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
-        
     }
     this.traspasarPaquete=(paquete,centro)=>{
         var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
@@ -23,7 +22,6 @@ function Centro (tipo,longitudCola) {
             var paquete=this.colaDeSalida[index];
             this.colaDeSalida.splice(index,1);
             centro.recibirPaquete(paquete);
-            paquete.pasarTurno();
         }
     }
 }

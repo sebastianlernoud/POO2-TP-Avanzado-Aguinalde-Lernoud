@@ -18,7 +18,7 @@ function Local(){
             var paquete=this.colaDeSalida[index];
             this.colaDeSalida.splice(index,1);
             centro.recibirPaquete(paquete);
-            paquete.pasarTurno();
+            paquete.disminuirTTL();
         }
         
     }
