@@ -108,3 +108,26 @@ test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
     expect(mapa.filas[1].colaDeEspera.length>0).toBeTruthy();
     expect(facturacion.colaDeEspera[0].ttl).toBe(5);
 });
+
+test("Paquetes de local a destino, mismo destino y misma urgencia",()=>{
+    var mapa = new Mapa(1,4);
+    let local=new Local();
+    let facturacion=new Centro(new Facturacion(),5);
+    let calidad = new Centro(new Calidad(),5);
+    let distribucion = new Centro(new Distribucion(),5);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    local.crearPaquetes(1,4);
+    let id=local.colaDeSalida[0].id;
+    let destino = local.colaDeSalida[0].destino;
+    let ttl=local.colaDeSalida[0].ttl -4;
+    for (let i=0;i<3;i++){
+        mapa.pasarTurno();
+    }
+    
+    expect(mapa.filas[3].colaDeEspera.length).toBe(1);
+    expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id+" al "+destino+", ttl="+ttl);
+    expect(mapa.filas[3].colaDeEspera.length).toBe(0);
+});

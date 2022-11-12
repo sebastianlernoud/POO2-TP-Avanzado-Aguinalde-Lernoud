@@ -126,6 +126,8 @@ test("Despachar paquetes a destino",()=>{
     " al Destino 1, ttl=3\nEntregando paquete id "+id2+" al Destino 1, ttl=3");
 });
 
+
+
 // test("Despachar por urgencia desde calidad a distribucion",()=>{
 //     var distribucion=new Centro(new Distribucion(),5);
 //     var calidad=new Centro(new Calidad(),5);
