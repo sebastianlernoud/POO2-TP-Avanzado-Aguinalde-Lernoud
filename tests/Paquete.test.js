@@ -59,6 +59,6 @@ test("Urgencia rapida de paquetes con 6 columnas",()=>{
 test("Disminucion de time to live",()=>{
     var paquete = new Paquete("Destino 1","Rapido",6);
     expect(paquete.ttl).toBe(9)
-    paquete.pasarTurno();
+    paquete.disminuirTTL();
     expect(paquete.ttl).toBe(8);
 });
