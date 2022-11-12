@@ -56,7 +56,7 @@ test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
     expect(facturacion.colaDeEspera[0].ttl).toBe(5);
 });
 
-test("Paquetes de local a destino, mismo destino y misma urgencia",()=>{
+test("Paquete de local a destino",()=>{
     let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
@@ -71,8 +71,8 @@ test("Paquetes de local a destino, mismo destino y misma urgencia",()=>{
     let ttl=local.colaDeSalida[0].ttl -4;
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
+        expect(mapa.filas[i+1].colaDeEspera.length).toBe(1);
     }
-    expect(mapa.filas[3].colaDeEspera.length).toBe(1);
     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id+" al "+destino+", ttl="+ttl);
     expect(mapa.filas[3].colaDeEspera.length).toBe(0);
 });
