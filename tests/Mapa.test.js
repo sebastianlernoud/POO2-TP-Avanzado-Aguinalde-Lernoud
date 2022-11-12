@@ -76,3 +76,35 @@ test("Paquete de local a destino",()=>{
     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id+" al "+destino+", ttl="+ttl);
     expect(mapa.filas[3].colaDeEspera.length).toBe(0);
 });
+
+test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
+    let local=new Local();
+    let facturacion=new Centro(new Facturacion(),5);
+    let calidad = new Centro(new Calidad(),5);
+    let distribucion = new Centro(new Distribucion(),5);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    local.crearPaquetes(3,4);
+    let id1=local.colaDeSalida[0].id;
+    let id2=local.colaDeSalida[1].id;
+    let id3=local.colaDeSalida[2].id;
+    let ttl1=local.colaDeSalida[0].ttl -4;
+    let ttl2=local.colaDeSalida[0].ttl -5;
+    let ttl3=local.colaDeSalida[0].ttl -6;
+    let destino = local.colaDeSalida[0].destino;
+    
+    for (let i=0;i<3;i++){
+        mapa.pasarTurno();
+        expect(mapa.filas[i+1].colaDeEspera.length).toBe(1);
+    }
+    expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
+    expect(mapa.filas[3].colaDeEspera.length).toBe(0);
+    mapa.pasarTurno();
+    expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
+    expect(mapa.filas[3].colaDeEspera.length).toBe(0);
+    mapa.pasarTurno();
+    expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id3+" al "+destino+", ttl="+ttl3);
+    expect(mapa.filas[3].colaDeEspera.length).toBe(0);
+});
