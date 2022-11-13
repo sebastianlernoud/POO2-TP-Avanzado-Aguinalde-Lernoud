@@ -11,17 +11,7 @@ function Local(){
             this.colaDeSalida.push(new Paquete("Destino 1","Rapido",columnas));
         }
     }
-    this.traspasarPaquete=(paquete,centro)=>{
-        
-        var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
-        if (index!=-1){
-            var paquete=this.colaDeSalida[index];
-            this.colaDeSalida.splice(index,1);
-            centro.recibirPaquete(paquete);
-            paquete.disminuirTTL();
-        }
-        
-    }
+    this.procesarPaquetes=()=>{ }
     
 }
 
