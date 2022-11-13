@@ -8,7 +8,7 @@ function Mapa(filas,columnas){
     }
 
     this.pasarTurno=()=>{
-        //let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
+        let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
         for (let i=this.cantidadColumnas-2;i>0;i--){
             this.filas[i].procesarPaquetes();
             while (this.filas[i].colaDeSalida.length>0){
@@ -19,7 +19,7 @@ function Mapa(filas,columnas){
             this.filas[0].traspasarPaquete(this.filas[0].colaDeSalida[0],this.filas[1]);
         }
         this.filas[0].crearPaquetes(4,this.cantidadColumnas);
-        
+        return texto;
     }
 }
 module.exports=Mapa;
