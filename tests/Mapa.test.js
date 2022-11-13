@@ -101,4 +101,5 @@ test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
     expect(mapa.filas[3].colaDeEspera[0].ttl).toBe(2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al "+destino+", ttl="+ttl3);
 });
