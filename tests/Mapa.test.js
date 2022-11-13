@@ -113,9 +113,7 @@ test("Manejando la excepción",()=>{
     mapa.agregarCentro(facturacion);
     mapa.agregarCentro(calidad);
     mapa.agregarCentro(distribucion);
-    mapa.pasarTurno();
-    let cant= mapa.filas[0].colaDeSalida.length;
-    mapa.pasarTurno();
+    mapa.pasarTurno(); //Creo 4 paquetes
+    mapa.pasarTurno(); // Creo 4 paquetes y paso 1 a facturacion
     expect(mapa.filas[1].colaDeEspera.length).toBe(1);
-    expect(mapa.filas[0].colaDeSalida.length).toBe(cant-1);
 });
