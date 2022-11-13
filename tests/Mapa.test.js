@@ -97,7 +97,6 @@ test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
     
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
-        expect(mapa.filas[i+1].colaDeEspera.length).toBe(1);
     };
     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
     expect(mapa.filas[3].colaDeEspera.length).toBe(0);
