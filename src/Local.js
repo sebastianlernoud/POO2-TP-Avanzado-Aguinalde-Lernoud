@@ -11,7 +11,7 @@ function Local(){
         }
     }
     this.procesarPaquetes=()=>{  
-        this.colaDeEspera.forEach(paquete => {
+        this.colaDeSalida.forEach(paquete => {
         paquete.disminuirTTL();
     })}
     this.traspasarPaquete=(paquete,centro)=>{
