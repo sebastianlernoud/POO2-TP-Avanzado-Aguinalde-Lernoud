@@ -117,3 +117,22 @@ test("Manejando la excepción",()=>{
     mapa.pasarTurno(); // Creo 4 paquetes y paso 1 a facturacion
     expect(mapa.filas[1].colaDeEspera.length).toBe(1);
 });
+
+test("Manejando la excepción, y que un paquete llegue al destino",()=>{
+    let local=new Local();
+    let facturacion=new Centro(new Facturacion(),1);
+    let calidad = new Centro(new Calidad(),3);
+    let distribucion = new Centro(new Distribucion(),3);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    mapa.pasarTurno();
+    let id1=local.colaDeSalida[0].id;
+    let ttl1=local.colaDeSalida[0].ttl -4;
+    for (let i=0;i<3;i++){
+        mapa.pasarTurno();
+    }
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
+    
+});
