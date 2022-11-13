@@ -130,6 +130,7 @@ test("Manejando la excepción, y que un paquete llegue al destino",()=>{
     mapa.pasarTurno();
     let id1=local.colaDeSalida[0].id;
     let ttl1=local.colaDeSalida[0].ttl -4;
+    let destino= local.colaDeSalida[0].destino;
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
     }
