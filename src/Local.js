@@ -14,7 +14,7 @@ function Local(centro){
     this.procesarPaquetes=()=>{ }
 
     
-    this.traspasarPaquetes=(paquete,centro)=>{
+    this.traspasarPaquete=(paquete,centro)=>{
         this.centro.traspasarPaquetes(paquete,centro);
     }
 }
