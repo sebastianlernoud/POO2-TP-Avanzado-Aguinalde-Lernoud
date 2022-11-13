@@ -103,3 +103,19 @@ test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al "+destino+", ttl="+ttl3);
 });
+
+test("Manejando la excepción",()=>{
+    let local=new Local();
+    let facturacion=new Centro(new Facturacion(),1);
+    let calidad = new Centro(new Calidad(),3);
+    let distribucion = new Centro(new Distribucion(),3);
+    mapa.agregarCentro(local);
+    mapa.agregarCentro(facturacion);
+    mapa.agregarCentro(calidad);
+    mapa.agregarCentro(distribucion);
+    mapa.pasarTurno();
+    let cant= mapa.filas[0].colaDeSalida.length;
+    mapa.pasarTurno();
+    expect(mapa.filas[1].colaDeEspera.length).toBe(1);
+    expect(mapa.filas[0].colaDeSalida.length).toBe(cant-1);
+})
