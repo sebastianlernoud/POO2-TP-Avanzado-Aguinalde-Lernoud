@@ -16,14 +16,11 @@ function Mapa(filas,columnas){
                 this.filas[i].traspasarPaquete(this.filas[i].colaDeSalida[0],this.filas[i+1]);
             }
         }
-        
-        if (this.filas[0].colaDeSalida.length==0){
-            this.filas[0].crearPaquetes(4,this.cantidadColumnas);
-        } else{
-
-            //paquetes que no pasan a facturacion y no disminuyen su TTL
+        while (this.filas[0].colaDeSalida.length>0){
             this.filas[0].traspasarPaquete(this.filas[0].colaDeSalida[0],this.filas[1]);
         }
+        this.filas[0].crearPaquetes(4,this.cantidadColumnas);
+        
     }
 }
 module.exports=Mapa;
