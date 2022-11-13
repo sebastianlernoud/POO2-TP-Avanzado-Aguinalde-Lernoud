@@ -126,7 +126,15 @@ test("Despachar paquetes a destino",()=>{
     " al Destino 1, ttl=3\nEntregando paquete id "+id2+" al Destino 1, ttl=3");
 });
 
-
+test("Elegir al mas urgente",()=>{
+    var distribucion=new Centro(new Distribucion(),5);
+    var paquete1=new Paquete("Destino 1","Muy rapido",4);
+    var paquete2 = new Paquete("Destino 1","Rapido",4);
+    distribucion.recibirPaquete(paquete1);
+    distribucion.recibirPaquete(paquete2);
+    let id1 =paquete1.id;
+    expect(distribucion.masUrgente().id).toBe(id1);
+});
 
 // test("Despachar por urgencia desde calidad a distribucion",()=>{
 //     var distribucion=new Centro(new Distribucion(),5);
@@ -136,6 +144,8 @@ test("Despachar paquetes a destino",()=>{
 //     calidad.recibirPaquete(paquete1);
 //     calidad.recibirPaquete(paquete2);
 //     let id1 =paquete1.id;
+//     let id2=paquete2.id;
+//     calidad.pasarTurno();
 
 //     expect()
 // });
