@@ -80,7 +80,7 @@ test("Paquete de local a destino",()=>{
 test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
     let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
-    let calidad = new Centro(new Calidad(),5);
+    let calidad = new Centro(new Calidad(),100);
     let distribucion = new Centro(new Distribucion(),5);
     mapa.agregarCentro(local);
     mapa.agregarCentro(facturacion);
