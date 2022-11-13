@@ -17,7 +17,7 @@ test("Crear mapa",()=>{
 });
 
 test("Armar matriz con centros",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
     let distribucion = new Centro(new Distribucion(),5);
@@ -29,7 +29,7 @@ test("Armar matriz con centros",()=>{
 });
 
 test("Crear un paquete desde la matriz",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
     let distribucion = new Centro(new Distribucion(),5);
@@ -42,7 +42,7 @@ test("Crear un paquete desde la matriz",()=>{
 });
 
 test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
     let distribucion = new Centro(new Distribucion(),5);
@@ -57,7 +57,7 @@ test("Crear un paquete desde la matriz y pasarlo a facturacion",()=>{
 });
 
 test("Paquete de local a destino",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),5);
     let distribucion = new Centro(new Distribucion(),5);
@@ -78,7 +78,7 @@ test("Paquete de local a destino",()=>{
 });
 
 test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),50);
     let calidad = new Centro(new Calidad(),100);
     let distribucion = new Centro(new Distribucion(),50);
@@ -105,7 +105,7 @@ test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
 });
 
 test("Manejando la excepción",()=>{
-    let local=new Local(new Centro());
+    let local=new Local();
     let facturacion=new Centro(new Facturacion(),1);
     let calidad = new Centro(new Calidad(),3);
     let distribucion = new Centro(new Distribucion(),3);
