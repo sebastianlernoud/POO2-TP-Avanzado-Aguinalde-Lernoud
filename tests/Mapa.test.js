@@ -95,12 +95,15 @@ test("Paquetes de local a destino, misma urgencia y mismo destino",()=>{
     let ttl3=local.colaDeSalida[0].ttl -6;
     let destino = local.colaDeSalida[0].destino;
     
-    for (let i=0;i<3;i++){
-        mapa.pasarTurno();
-    };
+    mapa.pasarTurno();
+    expect(facturacion.colaDeEspera[1].ttl).toBe(5);
+    mapa.pasarTurno();
+    expect(calidad.colaDeEspera[1].ttl).toBe(4);
+    mapa.pasarTurno();
+    expect(calidad.colaDeEspera[0].ttl).toBe(3);
     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
     expect(mapa.filas[3].colaDeEspera.length).toBe(0);
-    expect(mapa.filas[2].colaDeEspera[0].ttl).toBe(2); //Se recibe 4 cuando debe recibir 2
+    expect(mapa.filas[2].colaDeEspera[0].ttl).toBe(2);
     mapa.pasarTurno();
 //     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
 //     expect(mapa.filas[3].colaDeEspera.length).toBe(0);
