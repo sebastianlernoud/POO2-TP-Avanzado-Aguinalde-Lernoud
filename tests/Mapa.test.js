@@ -203,6 +203,7 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     mapa.agregarCentro(calidad);
     mapa.agregarCentro(distribucion);
     var paquete1=new Paquete("Destino 1","Rapido",4);
+    expect(paquete1.ttl).toBe(6);
     var paquete2 = new Paquete("Destino 1","Muy rapido",4);
     local.colaDeSalida.push(paquete1);
     local.colaDeSalida.push(paquete1);
@@ -215,7 +216,7 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     
     let destino= paquete1.destino;
     for (let i=0;i<3;i++){
-        mapa.pasarTurno();
+        mapa.pasarTurno(0);
     }
     
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
