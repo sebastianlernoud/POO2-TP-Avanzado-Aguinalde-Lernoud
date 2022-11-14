@@ -14,7 +14,7 @@ function Centro (tipo,longitudCola) {
         this.colaDeEspera.forEach(paquete => {
             paquete.disminuirTTL();
         })
-        this.colaDeEspera.sort(paquete1,paquete2=>{
+        this.colaDeEspera.sort((paquete1,paquete2)=>{
             paquete1.ttl-paquete2.ttl;
         })
         return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
