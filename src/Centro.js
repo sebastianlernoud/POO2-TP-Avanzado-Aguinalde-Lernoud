@@ -21,8 +21,8 @@ function Centro (tipo,longitudCola) {
         var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
         if (index!=-1){
             var paquete=this.colaDeSalida[index];
-            this.colaDeSalida.splice(index,1);
             centro.recibirPaquete(paquete);
+            this.colaDeSalida.splice(index,1);
         }
     }
     this.ordenar=(cola)=>{
