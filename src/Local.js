@@ -11,9 +11,11 @@ function Local(){
         }
     }
     this.procesarPaquetes=()=>{  
+        this.ordenar(this.colaDeSalida);
         this.colaDeSalida.forEach(paquete => {
-        paquete.disminuirTTL();
-    })}
+            paquete.disminuirTTL();
+        });
+    }
     this.traspasarPaquete=(paquete,centro)=>{
         var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
         if (index!=-1){
@@ -21,6 +23,15 @@ function Local(){
             this.colaDeSalida.splice(index,1);
             centro.recibirPaquete(paquete);
         }
+    }
+    this.ordenar=(cola)=>{
+        cola.sort((paquete1,paquete2)=>{
+            return paquete1.ttl-paquete2.ttl;
+        });
+    }
+    this.masUrgenteEnSalida=()=>{
+        this.ordenar(this.colaDeSalida);
+        return this.colaDeSalida[0];
     }
 }
 
