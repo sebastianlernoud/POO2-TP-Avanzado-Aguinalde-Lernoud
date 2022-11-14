@@ -34,6 +34,10 @@ function Centro (tipo,longitudCola) {
         this.ordenar(this.colaDeEspera);
         return this.colaDeEspera[0];
     }
+    this.masUrgenteEnSalida=()=>{
+        this.ordenar(this.colaDeSalida);
+        return this.colaDeSalida[0];
+    }
 }
 
 module.exports=Centro; 
