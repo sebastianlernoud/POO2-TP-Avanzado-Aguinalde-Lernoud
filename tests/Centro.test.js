@@ -150,7 +150,6 @@ test("Elegir al mas urgente para procesar",()=>{
     distribucion.recibirPaquete(paquete3);
     distribucion.recibirPaquete(paquete1);
     distribucion.recibirPaquete(paquete2);
-    expect().toBe(paquete1);
     let id1 =paquete1.id;
     expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
 });
