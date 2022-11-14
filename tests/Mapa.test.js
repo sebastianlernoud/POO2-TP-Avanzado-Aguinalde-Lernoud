@@ -186,6 +186,6 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
     }
-    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1 || "Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
 });
