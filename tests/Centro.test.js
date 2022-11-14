@@ -126,7 +126,7 @@ test("Despachar paquetes a destino",()=>{
     " al Destino 1, ttl=3\nEntregando paquete id "+id2+" al Destino 1, ttl=3");
 });
 
-test("Elegir al mas urgente",()=>{
+test("Elegir al mas urgente para procesar",()=>{
     var distribucion=new Centro(new Distribucion(),5);
     var paquete1=new Paquete("Destino 1","Muy rapido",4);
     var paquete2 = new Paquete("Destino 1","Rapido",4);
@@ -134,6 +134,18 @@ test("Elegir al mas urgente",()=>{
     distribucion.recibirPaquete(paquete2);
     let id1 =paquete1.id;
     expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
+});
+
+test("Elegir al mas urgente para despachar al siguiente centro",()=>{
+    var distribucion=new Centro(new Facturacion(),5);
+    var calidad = new Centro(new Calidad());
+    var paquete1=new Paquete("Destino 1","Muy rapido",4);
+    var paquete2 = new Paquete("Destino 1","Rapido",4);
+    let id1 =paquete1.id;
+    calidad.recibirPaquete(paquete1);
+    calidad.recibirPaquete(paquete2);
+    distribucion.recibirPaquete(calidad.masUrgenteEnSalida());
+    expect(distribucion.colaDeEspera[0].id).toBe(id1);
 });
 
 // test("Despachar por urgencia desde calidad a distribucion",()=>{
