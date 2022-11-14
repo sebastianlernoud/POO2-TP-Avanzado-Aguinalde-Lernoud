@@ -27,6 +27,12 @@ function Centro (tipo,longitudCola) {
             centro.recibirPaquete(paquete);
         }
     }
+    this.masUrgente=()=>{
+        this.colaDeEspera.sort((paquete1,paquete2)=>{
+            paquete1.ttl-paquete2.ttl;
+        });
+        return this.colaDeEspera[0];
+    }
 }
 
 module.exports=Centro; 
