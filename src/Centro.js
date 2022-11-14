@@ -26,16 +26,16 @@ function Centro (tipo,longitudCola) {
         }
     }
     this.ordenar=(cola)=>{
-        return cola.sort((paquete1,paquete2)=>{
+        cola.sort((paquete1,paquete2)=>{
             return paquete1.ttl-paquete2.ttl;
         });
     }
     this.masUrgenteEnEspera=()=>{
-        this.colaDeEspera=this.ordenar(this.colaDeEspera);
+        this.ordenar(this.colaDeEspera);
         return this.colaDeEspera[0];
     }
     this.masUrgenteEnSalida=()=>{
-        this.colaDeSalida=this.ordenar(this.colaDeSalida);
+        this.ordenar(this.colaDeSalida);
         return this.colaDeSalida[0];
     }
 }
