@@ -190,7 +190,3 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
 });
-
-
-// Entregando paquete id 101 al Destino 1, ttl=0
-// Entregando paquete id 103 al Destino 1, ttl=2
