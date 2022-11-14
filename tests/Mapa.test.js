@@ -202,17 +202,21 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     mapa.agregarCentro(facturacion);
     mapa.agregarCentro(calidad);
     mapa.agregarCentro(distribucion);
+    
     var paquete1=new Paquete("Destino 1","Rapido",4);
-    var paquete2 = new Paquete("Destino 1","Muy rapido",4);
+    var paquete2=new Paquete("Destino 1","Rapido",4);
+    var paquete3=new Paquete("Destino 1","Rapido",4);
+    
+    var paquete4 = new Paquete("Destino 1","Muy rapido",4);
     local.colaDeSalida.push(paquete1);
-    local.colaDeSalida.push(paquete1);
-    local.colaDeSalida.push(paquete1);
+    local.colaDeSalida.push(paquete2);
+    local.colaDeSalida.push(paquete3);
     mapa.pasarTurno(0);
     expect(facturacion.colaDeEspera[0].ttl).toBe(5);
 
     local.colaDeSalida.push(paquete2);
-    let id2=paquete2.id;
-    let ttl2=paquete2.ttl-4;
+    let id4=paquete4.id;
+    let ttl4=paquete4.ttl-4;
     let destino= paquete1.destino;
     mapa.pasarTurno(0);
     expect(calidad.colaDeEspera[0].ttl).toBe(4);
@@ -220,7 +224,7 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     expect(distribucion.colaDeEspera[0].ttl).toBe(3);
     expect(calidad.colaDeEspera[0].ttl).toBe(3);
     mapa.pasarTurno(0);
-    expect(distribucion.colaDeEspera[0].id).toBe(id2);
+    expect(distribucion.colaDeEspera[0].id).toBe(id4);
     // for (let i=0;i<3;i++){
     //     mapa.pasarTurno(0);
     // }
