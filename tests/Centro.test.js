@@ -136,7 +136,7 @@ test("Ordenar la cola de espera ",()=>{
     distribucion.recibirPaquete(paquete3);
     distribucion.recibirPaquete(paquete2);
     distribucion.ordenar(distribucion.colaDeEspera);
-    expect(distribucion.colaDeEntrada[0].id).toBe(paquete1.id);
+    expect(distribucion.colaDeEspera[0].id).toBe(paquete1.id);
     expect(distribucion.colaDeEspera[1].id).toBe(paquete2.id);
     expect(distribucion.colaDeEspera[2].id).toBe(paquete3.id);
 })
