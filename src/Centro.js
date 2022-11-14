@@ -27,7 +27,7 @@ function Centro (tipo,longitudCola) {
     }
     this.ordenar=(cola)=>{
         return cola.sort((paquete1,paquete2)=>{
-            paquete1.ttl-paquete2.ttl;
+            return paquete1.ttl-paquete2.ttl;
         });
     }
     this.masUrgenteEnEspera=()=>{
