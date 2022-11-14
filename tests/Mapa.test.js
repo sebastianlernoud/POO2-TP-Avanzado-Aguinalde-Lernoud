@@ -181,9 +181,16 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     let id1=paquete1.id;
     let id2=paquete2.id;
     let destino= local.colaDeSalida[0].destino;
-    for (let i=0;i<3;i++){
-        mapa.pasarTurno();
-    }
+    // for (let i=0;i<3;i++){
+    //     mapa.pasarTurno();
+    // }
+    mapa.pasarTurno();
+    expect(facturacion.colaDeEspera[0].id).toBe(id1);
+    mapa.pasarTurno();
+    expect(calidad.colaDeEspera[0].id).toBe(id1);
+    mapa.pasarTurno();
+    expect(distribucion.colaDeEspera[0].id).toBe(id1);
+
     let texto1="Entregando paquete id "+id1+" al "+destino;
     let texto2="Entregando paquete id "+id2+" al "+destino;
     let rsp1=mapa.pasarTurno();
