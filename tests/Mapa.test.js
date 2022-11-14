@@ -180,14 +180,14 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     local.colaDeSalida.push(paquete3);
     let id1=paquete1.id;
     let id2=paquete2.id;
-    let ttl2=paquete2.ttl;
+    let ttl2=paquete2.ttl-4;
     let destino= local.colaDeSalida[0].destino;
     // for (let i=0;i<3;i++){
     //     mapa.pasarTurno();
     // }
     mapa.pasarTurno();
     expect(facturacion.colaDeEspera[0].id).toBe(id2);
-    //expect(facturacion.colaDeEspera[1].id).toBe(id1);
+    expect(facturacion.colaDeEspera.length).toBe(3);
     mapa.pasarTurno();
     expect(calidad.colaDeEspera[0].id).toBe(id2);
     //expect(calidad.colaDeEspera[1].id).toBe(id1);
