@@ -130,8 +130,11 @@ test("Elegir al mas urgente para procesar",()=>{
     var distribucion=new Centro(new Distribucion(),5);
     var paquete1=new Paquete("Destino 1","Muy rapido",4);
     var paquete2 = new Paquete("Destino 1","Rapido",4);
+    var paquete3 = new Paquete("Destino 1","Normal",4);
+    distribucion.recibirPaquete(paquete3);
     distribucion.recibirPaquete(paquete1);
     distribucion.recibirPaquete(paquete2);
+    
     let id1 =paquete1.id;
     expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
 });
