@@ -7,7 +7,7 @@ function Mapa(filas,columnas){
         this.filas.push(centro);
     }
 
-    this.pasarTurno=()=>{
+    this.pasarTurno=(cantidadPaquetes=4)=>{
         let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
         for (let i=this.cantidadColumnas-2;i>=0;i--){
             this.filas[i].procesarPaquetes();
@@ -21,7 +21,7 @@ function Mapa(filas,columnas){
                 }
             }
         }
-        this.filas[0].crearPaquetes(4,this.cantidadColumnas);
+        this.filas[0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
         return texto;
     }
 }
