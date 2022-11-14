@@ -133,7 +133,7 @@ test("Elegir al mas urgente",()=>{
     distribucion.recibirPaquete(paquete1);
     distribucion.recibirPaquete(paquete2);
     let id1 =paquete1.id;
-    expect(distribucion.masUrgente().id).toBe(id1);
+    expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
 });
 
 // test("Despachar por urgencia desde calidad a distribucion",()=>{
