@@ -138,7 +138,7 @@ test("Elegir al mas urgente para procesar",()=>{
 
 test("Elegir al mas urgente para despachar al siguiente centro",()=>{
     var distribucion=new Centro(new Distribucion(),5);
-    var calidad = new Centro(new Calidad());
+    var calidad = new Centro(new Calidad(),4);
     var paquete1=new Paquete("Destino 1","Muy rapido",4);
     var paquete2 = new Paquete("Destino 1","Rapido",4);
     var paquete3 = new Paquete("Destino 1","Normal",4);
