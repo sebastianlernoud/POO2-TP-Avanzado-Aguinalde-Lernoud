@@ -11,7 +11,7 @@ function Local(){
         }
     }
     this.procesarPaquetes=()=>{  
-        //this.ordenar(this.colaDeSalida);
+        this.ordenar(this.colaDeSalida);
         this.colaDeSalida.forEach(paquete => {
             paquete.disminuirTTL();
         });

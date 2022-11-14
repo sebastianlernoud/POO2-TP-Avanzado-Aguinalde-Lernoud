@@ -217,14 +217,9 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     let id4=paquete4.id;
     let ttl4=paquete4.ttl-4;
     let destino= paquete1.destino;
-    mapa.pasarTurno(0);
-    
-    mapa.pasarTurno(0);
-    expect(distribucion.colaDeEspera[0].ttl).toBe(3);
-    expect(calidad.colaDeEspera[0].ttl).toBe(3);
-    expect(calidad.colaDeEspera[1].ttl).toBe(3);
-    mapa.pasarTurno(0);
-    expect(distribucion.colaDeEspera[0].ttl).toBe(2);
+    for (let i=0; i<3;i++){
+        mapa.pasarTurno(0);
+    }
     console.log(mapa.pasarTurno(0));
     //expect(distribucion.colaDeEspera[0].id).toBe(id4);
     console.log(mapa.pasarTurno(0));
