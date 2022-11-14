@@ -4,7 +4,6 @@ function Calidad(){
             let paquete=colaDeEspera.shift();
             colaDeSalida.push(paquete);
         }
-        
     }
 }
 
