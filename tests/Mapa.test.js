@@ -220,10 +220,5 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     for (let i=0; i<3;i++){
         mapa.pasarTurno(0);
     }
-    console.log(mapa.pasarTurno(0));
-    //expect(distribucion.colaDeEspera[0].id).toBe(id4);
-    console.log(mapa.pasarTurno(0));
-    console.log(mapa.pasarTurno(0));
-    //expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
-    //expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id4+" al "+destino+", ttl="+ttl4);
 });
