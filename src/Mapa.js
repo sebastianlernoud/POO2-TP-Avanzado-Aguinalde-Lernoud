@@ -13,7 +13,8 @@ function Mapa(filas,columnas){
             this.filas[i].procesarPaquetes();
             while (this.filas[i].colaDeSalida.length>0){
                 try {
-                    this.filas[i].traspasarPaquete(this.filas[i].colaDeSalida[0],this.filas[i+1]);
+                    let paquete=this.filas[i].masUrgenteEnSalida();
+                    this.filas[i].traspasarPaquete(paquete,this.filas[i+1]);
                 }
                 catch(error){
                     break;

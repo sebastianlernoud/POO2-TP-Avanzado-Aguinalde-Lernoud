@@ -193,3 +193,7 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     expect(rsp2===(texto1+", ttl="+(paquete2.ttl-5)) || rsp2===(texto2+", ttl="+(paquete2.ttl-5))).toBeTruthy();
     //"Entregando paquete id "+ paquete.id+" al "+paquete.destino+", ttl="+paquete.ttl+"\n";
 });
+
+
+// Entregando paquete id 101 al Destino 1, ttl=0
+// Entregando paquete id 103 al Destino 1, ttl=2
