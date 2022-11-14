@@ -21,7 +21,9 @@ function Mapa(filas,columnas){
                 }
             }
         }
-        this.filas[0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
+        if (cantidadPaquetes!=0){
+            this.filas[0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
+        }
         return texto;
     }
 }
