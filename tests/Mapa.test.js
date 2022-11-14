@@ -179,17 +179,16 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     local.colaDeSalida.push(paquete1);
     local.colaDeSalida.push(paquete3);
     let id1=paquete1.id;
-    let ttl1=paquete1.ttl -4;
     let id2=paquete2.id;
-    let ttl2=paquete2.ttl -5;
     let destino= local.colaDeSalida[0].destino;
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
     }
-    let texto1="Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1;
-    let texto2="Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2;
+    let texto1="Entregando paquete id "+id1+" al "+destino;
+    let texto2="Entregando paquete id "+id2+" al "+destino;
     let rsp1=mapa.pasarTurno();
     let rsp2=mapa.pasarTurno();
-    expect(rsp1===texto1 || rsp1===texto2).toBeTruthy();
-    expect(rsp2===texto1 || rsp2===texto2).toBeTruthy();
+    expect(rsp1===(texto1+", ttl="+(paquete1.ttl-4)) || rsp1===(texto2+", ttl="+(paquete1.ttl-4))).toBeTruthy();
+    expect(rsp2===(texto1+", ttl="+(paquete2.ttl-5)) || rsp2===(texto2+", ttl="+(paquete2.ttl-5))).toBeTruthy();
+    //"Entregando paquete id "+ paquete.id+" al "+paquete.destino+", ttl="+paquete.ttl+"\n";
 });
