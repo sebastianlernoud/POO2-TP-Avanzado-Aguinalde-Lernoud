@@ -186,8 +186,10 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     for (let i=0;i<3;i++){
         mapa.pasarTurno();
     }
-    let texto1="Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1
-    let texto2=mapa.pasarTurno();
-    expect(mapa.pasarTurno()===texto1 || mapa.pasarTurno()===texto2).toBeTruthy();
-    expect(mapa.pasarTurno()===texto1 || mapa.pasarTurno()===texto2).toBeTruthy();
+    let texto1="Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1;
+    let texto2="Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2;
+    let rsp1=mapa.pasarTurno();
+    let rsp2=mapa.pasarTurno();
+    expect(rsp1===texto1 || rsp1===texto2).toBeTruthy();
+    expect(rsp2===texto1 || rsp2===texto2).toBeTruthy();
 });
