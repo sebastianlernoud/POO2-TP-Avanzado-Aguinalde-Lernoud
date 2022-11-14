@@ -212,6 +212,8 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     local.colaDeSalida.push(paquete2);
     local.colaDeSalida.push(paquete3);
     mapa.pasarTurno(0);
+    expect(facturacion.colaDeEspera[2].ttl).toBe(5);
+    expect(facturacion.colaDeEspera[1].ttl).toBe(5);
     expect(facturacion.colaDeEspera[0].ttl).toBe(5);
 
     local.colaDeSalida.push(paquete2);
@@ -219,9 +221,7 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     let ttl4=paquete4.ttl-4;
     let destino= paquete1.destino;
     mapa.pasarTurno(0);
-    expect(calidad.colaDeEspera[0].ttl).toBe(4);
-    //expect(calidad.colaDeEspera[1].ttl).toBe(4);
-    expect(calidad.colaDeEspera[2].ttl).toBe(4);
+    
     mapa.pasarTurno(0);
     expect(distribucion.colaDeEspera[0].ttl).toBe(3);
     expect(calidad.colaDeEspera[0].ttl).toBe(3);
