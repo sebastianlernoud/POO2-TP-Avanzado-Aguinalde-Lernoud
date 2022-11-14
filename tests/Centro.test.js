@@ -142,33 +142,33 @@ test("Ordenar la cola de espera ",()=>{
 })
 
 
-// test("Elegir al mas urgente para procesar",()=>{
-//     var distribucion=new Centro(new Distribucion(),5);
-//     var paquete1=new Paquete("Destino 1","Muy rapido",4);
-//     var paquete2 = new Paquete("Destino 1","Rapido",4);
-//     var paquete3 = new Paquete("Destino 1","Normal",4);
-//     distribucion.recibirPaquete(paquete3);
-//     distribucion.recibirPaquete(paquete1);
-//     distribucion.recibirPaquete(paquete2);
-    //expect().toBe(paquete1);
-//     let id1 =paquete1.id;
-//     expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
-// });
+test("Elegir al mas urgente para procesar",()=>{
+    var distribucion=new Centro(new Distribucion(),5);
+    var paquete1=new Paquete("Destino 1","Muy rapido",4);
+    var paquete2 = new Paquete("Destino 1","Rapido",4);
+    var paquete3 = new Paquete("Destino 1","Normal",4);
+    distribucion.recibirPaquete(paquete3);
+    distribucion.recibirPaquete(paquete1);
+    distribucion.recibirPaquete(paquete2);
+    expect().toBe(paquete1);
+    let id1 =paquete1.id;
+    expect(distribucion.masUrgenteEnEspera().id).toBe(id1);
+});
 
-// test("Elegir al mas urgente para despachar al siguiente centro",()=>{
-//     var distribucion=new Centro(new Distribucion(),5);
-//     var facturacion = new Centro(new Facturacion(),4);
-//     var paquete1=new Paquete("Destino 1","Muy rapido",4);
-//     var paquete2 = new Paquete("Destino 1","Rapido",4);
-//     var paquete3 = new Paquete("Destino 1","Normal",4);
-//     let id1 =paquete1.id;
-//     facturacion.recibirPaquete(paquete3);
-//     facturacion.recibirPaquete(paquete1);
-//     facturacion.recibirPaquete(paquete2);
-//     facturacion.procesarPaquetes();
-//     distribucion.recibirPaquete(facturacion.masUrgenteEnSalida());
-//     expect(distribucion.colaDeEspera[0].id).toBe(id1);
-// });
+test("Elegir al mas urgente para despachar al siguiente centro",()=>{
+    var distribucion=new Centro(new Distribucion(),5);
+    var facturacion = new Centro(new Facturacion(),4);
+    var paquete1=new Paquete("Destino 1","Muy rapido",4);
+    var paquete2 = new Paquete("Destino 1","Rapido",4);
+    var paquete3 = new Paquete("Destino 1","Normal",4);
+    let id1 =paquete1.id;
+    facturacion.recibirPaquete(paquete3);
+    facturacion.recibirPaquete(paquete1);
+    facturacion.recibirPaquete(paquete2);
+    facturacion.procesarPaquetes();
+    distribucion.recibirPaquete(facturacion.masUrgenteEnSalida());
+    expect(distribucion.colaDeEspera[0].id).toBe(id1);
+});
 
 // test("Despachar por urgencia desde calidad a distribucion",()=>{
 //     var distribucion=new Centro(new Distribucion(),5);
