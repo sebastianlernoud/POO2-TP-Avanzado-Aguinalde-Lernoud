@@ -165,7 +165,7 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
 
 test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     let local=new Local();
-    let facturacion=new Centro(new Facturacion(),1);
+    let facturacion=new Centro(new Facturacion(),5);
     let calidad = new Centro(new Calidad(),3);
     let distribucion = new Centro(new Distribucion(),3);
     mapa.agregarCentro(local);
@@ -178,7 +178,6 @@ test("Que los dos paquetes con mayor urgencia lleguen a destino primero",()=>{
     local.colaDeSalida.push(paquete2);
     local.colaDeSalida.push(paquete1);
     local.colaDeSalida.push(paquete3);
-    expect(local.colaDeSalida.length).toBe(3);
     let id1=paquete1.id;
     let id2=paquete2.id;
     let ttl2=paquete2.ttl-4;
