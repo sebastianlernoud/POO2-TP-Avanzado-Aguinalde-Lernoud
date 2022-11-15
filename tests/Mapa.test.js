@@ -231,7 +231,7 @@ test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=
     var paquete2=new Paquete("Destino 1","Rapido",4);
 
     let id1=paquete1.id;
-    let ttl1=paquete1.ttl-1;
+    let ttl1=paquete1.ttl-2;
     let destino= paquete1.destino;
     let id2=paquete1.id;
     let ttl2=paquete1.ttl-3;
