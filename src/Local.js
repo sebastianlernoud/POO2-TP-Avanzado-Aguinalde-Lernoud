@@ -9,6 +9,7 @@ function Local(){
             colaDeSalida.push(new Paquete("Destino 1","Rapido",columnas));
         }
     }
+    this.procesarPaquetes=()=>{}
 }
 
 module.exports=Local;
@@ -26,12 +27,7 @@ module.exports=Local;
         this.colaDeSalida.splice(index,1);
     }
 } */
-/* this.procesarPaquetes=()=>{  
-    this.ordenar(this.colaDeSalida);
-    this.colaDeSalida.forEach(paquete => {
-        paquete.disminuirTTL();
-    });
-}
+/* 
 
 this.ordenar=(cola)=>{
     cola.sort((paquete1,paquete2)=>{
