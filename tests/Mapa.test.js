@@ -236,7 +236,7 @@ test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=
     let id2=paquete1.id;
     let ttl2=paquete1.ttl-3;
 
-    mapa2.agregarCentro(calidad);
+    mapa2.agregarCentro(facturacion);
     mapa2.agregarCentro(distribucion);
     facturacion.recibirPaquete(paquete1);
     facturacion.recibirPaquete(paquete2);
