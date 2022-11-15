@@ -63,31 +63,31 @@ test("Procesar paquetes en un centro de distribucion",()=>{
 });
 
 test("Crear un local",()=>{
-    var local = new Centro(Local(),3);
+    var local = new Centro(new Local(),3);
     expect(local.colaDeSalida).toEqual([]);
 });
 
 test("Generar un paquete desde un local",()=>{
-    var local = new Centro(Local(),3);
+    var local = new Centro(new Local(),3);
     local.crearPaquetes(1);
     expect(local.colaDeSalida.length).toBe(1);
 });
 
 test("Generar cinco paquetes desde un local",()=>{
-    var local = new Centro(Local(),3);
+    var local = new Centro(new Local(),3);
     local.crearPaquetes(5);
     expect(local.colaDeSalida.length).toBe(5);
 });
 
 test("Error por mas de cinco paquetes desde un local",()=>{
-    var local = new Local(new Centro());
+    var local = new Centro(new Local());
     
     expect(()=>{local.crearPaquetes(6);}).toThrow(new Error("La cantidad no es valida"));
 }); 
 
 
 test("Pasar un paquete de Local a Centro de Facturacion",()=>{
-    var local = new Centro(Local(),3);
+    var local = new Centro(new Local(),3);
     var centroFacturacion = new Centro(new Facturacion(),3);
     local.crearPaquetes(1);
     local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);
@@ -96,7 +96,7 @@ test("Pasar un paquete de Local a Centro de Facturacion",()=>{
 });
 
 test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de 3",()=>{
-    var local = new Centro(Local(),3);
+    var local = new Centro(new Local(),3);
     var centroFacturacion = new Centro(new Facturacion(),3);
     local.crearPaquetes(5,4);
     for (let i=0;i<3;i++){
