@@ -24,7 +24,7 @@ test("Crear una matriz y añadirle centros",()=>{
     
     expect(mapa.filas[0].length).toBe(4);
     expect(mapa.filas[1].length).toBe(4);
-    expect(mapa.filas[0][0].colaDeEspera).toBe([]);
+    expect(mapa.filas[0][0].colaDeEspera).toEqual([]);
 });
 
 // [[l1,l2,l3],//
