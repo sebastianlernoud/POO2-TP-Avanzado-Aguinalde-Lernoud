@@ -9,11 +9,7 @@ function Local(){
             colaDeSalida.push(new Paquete("Destino 1","Rapido",columnas));
         }
     }
-    this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
-        colaDeSalida.forEach(paquete => {
-            paquete.disminuirTTL();
-        });
-    }
+    this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{}
 }
 
 module.exports=Local;

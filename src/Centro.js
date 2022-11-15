@@ -17,6 +17,9 @@ function Centro (tipo,longitudCola) {
         this.colaDeEspera.forEach(paquete => {
             paquete.disminuirTTL();
         });
+        this.colaDeSalida.forEach(paquete => {
+            paquete.disminuirTTL();
+        });
         this.ordenar(this.colaDeEspera);
         return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
     }
