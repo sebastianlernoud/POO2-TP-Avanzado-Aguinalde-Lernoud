@@ -223,16 +223,28 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id4+" al "+destino+", ttl="+ttl4);
 });
 
-// test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=>{
-//     let mapa2=new Mapa(1,2);
-//     let distribucion = new Centro(new Distribucion(),1);
-//     let facturacion=new Centro(new Calidad(),2);
-//     mapa2.agregarCentro(calidad);
-//     mapa2.agregarCentro(distribucion);
-//     calidad.colaDeEspera.push()
-//     mapa2.pasarTurno();
-//     mapa2.pasarTurno();
-// });
+test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=>{
+    let mapa2=new Mapa(1,2);
+    let distribucion = new Centro(new Distribucion(),1);
+    let facturacion=new Centro(new Facturacion(),2);
+    var paquete1=new Paquete("Destino 1","Rapido",4);
+    var paquete2=new Paquete("Destino 1","Rapido",4);
+
+    let id1=paquete1.id;
+    let ttl1=paquete1.ttl-1;
+    let destino= paquete1.destino;
+    let id2=paquete1.id;
+    let ttl2=paquete1.ttl-3;
+
+    mapa2.agregarCentro(calidad);
+    mapa2.agregarCentro(distribucion);
+    facturacion.recibirPaquete(paquete1);
+    facturacion.recibirPaquete(paquete2);
+    mapa2.pasarTurno();
+    expect(mapa2.pasarTurno()).toEqual("Entregando paquete id "+id1+" al "+destino+", ttl="+ttl1);
+    expect(mapa2.pasarTurno()).toEqual("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
+    //expect()
+});
 
 test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=>{
     let mapa2=new Mapa(1,2);
@@ -242,12 +254,12 @@ test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=
     mapa2.agregarCentro(facturacion);
     mapa2.pasarTurno(); //Crea 4 paquetes y deja en la cola de salida de local
     let ttl1=local.colaDeSalida[0].ttl;
-    let ttl2=local.colaDeSalida[0].ttl;
-    let ttl3=local.colaDeSalida[0].ttl;
-    let ttl4=local.colaDeSalida[0].ttl;
+    let ttl2=local.colaDeSalida[1].ttl;
+    let ttl3=local.colaDeSalida[2].ttl;
+    let ttl4=local.colaDeSalida[3].ttl;
     mapa2.pasarTurno(0);//Intenta pasar 4 paquetes, solo pasa 1 
     expect(local.colaDeSalida.length).toBe(3);
     expect(facturacion.colaDeEspera.length).toBe(1);
     expect(facturacion.colaDeEspera[0].ttl).toBe(ttl1-1);
-    expect(local.colaDeSalida[0].ttl).toBe(ttl1-1);
+    expect(local.colaDeSalida[0].ttl).toBe(ttl2-1);
 });
