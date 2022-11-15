@@ -222,3 +222,32 @@ test("Que el paquete mas urgente creado despues pase a los menos urgentes que es
     }
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id4+" al "+destino+", ttl="+ttl4);
 });
+
+// test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=>{
+//     let mapa2=new Mapa(1,2);
+//     let distribucion = new Centro(new Distribucion(),1);
+//     let facturacion=new Centro(new Calidad(),2);
+//     mapa2.agregarCentro(calidad);
+//     mapa2.agregarCentro(distribucion);
+//     calidad.colaDeEspera.push()
+//     mapa2.pasarTurno();
+//     mapa2.pasarTurno();
+// });
+
+test("Paquete que se queda esperando en la cola de salida, disminuye su ttl",()=>{
+    let mapa2=new Mapa(1,2);
+    let local = new Centro(new Local(),1);
+    let facturacion=new Centro(new Facturacion(),1);
+    mapa2.agregarCentro(local);
+    mapa2.agregarCentro(facturacion);
+    mapa2.pasarTurno(); //Crea 4 paquetes y deja en la cola de salida de local
+    let ttl1=local.colaDeSalida[0].ttl;
+    let ttl2=local.colaDeSalida[0].ttl;
+    let ttl3=local.colaDeSalida[0].ttl;
+    let ttl4=local.colaDeSalida[0].ttl;
+    mapa2.pasarTurno(0);//Intenta pasar 4 paquetes, solo pasa 1 
+    expect(local.colaDeSalida.length).toBe(3);
+    expect(facturacion.colaDeEspera.length).toBe(1);
+    expect(facturacion.colaDeEspera[0].ttl).toBe(ttl1-1);
+    expect(local.colaDeSalida[0].ttl).toBe(ttl1-1);
+});
