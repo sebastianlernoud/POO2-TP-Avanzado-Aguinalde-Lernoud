@@ -9,13 +9,22 @@ function Local(){
             colaDeSalida.push(new Paquete("Destino 1","Rapido",columnas));
         }
     }
-    this.procesarPaquetes=()=>{}
+    this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{
+        colaDeSalida.forEach(paquete => {
+            paquete.disminuirTTL();
+        });
+    }
 }
 
 module.exports=Local;
 
 
-
+/* this.procesarPaquetes=()=>{  
+    this.ordenar(this.colaDeSalida);
+    this.colaDeSalida.forEach(paquete => {
+        paquete.disminuirTTL();
+    });
+}
 
 
 
@@ -27,8 +36,8 @@ module.exports=Local;
         this.colaDeSalida.splice(index,1);
     }
 } */
-/* 
 
+/*
 this.ordenar=(cola)=>{
     cola.sort((paquete1,paquete2)=>{
         return paquete1.ttl-paquete2.ttl;
