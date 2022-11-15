@@ -6,6 +6,9 @@ function Mapa(filas,columnas){
     this.agregarCentro=(centro)=>{
         this.filas.push(centro);
     }
+    this.agregarFila=(fila)=>{
+        this.filas.push(fila);
+    }
 
     this.pasarTurno=(cantidadPaquetes=4)=>{
         let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
