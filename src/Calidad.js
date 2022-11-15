@@ -5,6 +5,7 @@ function Calidad(){
             colaDeSalida.push(paquete);
         }
     }
+    this.crearPaquetes=()=>{}
 }
 
 module.exports=Calidad;

@@ -7,6 +7,7 @@ function Facturacion(){
             i++;
         }
     }
+    this.crearPaquetes = () => {}
 }
 
 module.exports=Facturacion;

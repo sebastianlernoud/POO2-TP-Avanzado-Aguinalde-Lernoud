@@ -10,6 +10,8 @@ function Distribucion(){
         }
         return texto.slice(0,-1);
     }
+
+    this.crearPaquetes = () => {}
 }
 
 module.exports=Distribucion;
