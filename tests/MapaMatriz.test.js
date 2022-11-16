@@ -167,11 +167,12 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     let ttl1=paquete1.ttl -4;
     let ttl2=paquete2.ttl -4;
     let ttl3=paquete3.ttl -5;
-    expect(local1.colaDeSalida[0].id).toBe(id2);
-    expect(local1.colaDeSalida[1].id).toBe(id1);
-    for (let i=0;i<3;i++){
+    
+    
         mapa.pasarTurno(0);
-    }
+        expect(facturacion1.colaDeEspera[0].id).toBe(id1);
+        expect(facturacion2.colaDeEspera[0].id).toBe(id2);
+    
     expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
     "\nEntregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al Destino "+1+", ttl="+ttl3)
