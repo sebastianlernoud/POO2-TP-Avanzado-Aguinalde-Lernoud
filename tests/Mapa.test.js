@@ -10,11 +10,10 @@ var mapa;
 beforeEach(()=>{
     mapa = new Mapa(1,4);
 });
-
-// test("Crear mapa",()=>{
-//     expect(mapa.cantidadFilas).toBe(1);
-//     expect(mapa.cantidadColumnas).toBe(4);
-// });
+test("Crear mapa",()=>{
+    expect(mapa.cantidadFilas).toBe(1);
+    expect(mapa.cantidadColumnas).toBe(4);
+});
 
 // test("Armar matriz con centros",()=>{
 //     let local=new Centro(new Local(),3);

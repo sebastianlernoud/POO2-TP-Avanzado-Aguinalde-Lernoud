@@ -36,8 +36,8 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     
     mapa.agregarFila([local1,facturacion1]);
     mapa.pasarTurno(2);
-    let id1=local.colaDeSalida[0].id;
-    let id2=local.colaDeSalida[1].id;
+    let id1=local1.colaDeSalida[0].id;
+    let id2=local1.colaDeSalida[1].id;
     mapa.pasarTurno(0);
     expect(facturacion1.colaDeEspera[0].id).toBe(id1);
     expect(facturacion1.colaDeEspera[1].id).toBe(id2);
