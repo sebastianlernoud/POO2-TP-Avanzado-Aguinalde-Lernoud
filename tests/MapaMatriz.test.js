@@ -184,8 +184,15 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     local2.colaDeSalida.push(paquete3); //sube
     let id1=paquete1.id;
     let ttl1=paquete1.ttl -4;
+    let ttl2=paquete1.ttl -4;
+    let ttl3=paquete1.ttl -3;
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
     }
-    expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1);
+    expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
+    "Entregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al Destino "+1+", ttl="+ttl3)
 });
+
+
+// Testear que los paquetes que vayan en diagonal tengan que ir derecho porque la cola esta llena
