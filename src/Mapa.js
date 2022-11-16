@@ -41,13 +41,31 @@ function Mapa(filas,columnas){
 
     this.siguienteSalto=(paquete,posicion)=>{
         let destinoFinal=paquete.destino-1;
+        let cantDiagonales=paquete.destino-1 - posicion[0];
+        let posibilidades=[];
         if (destinoFinal >posicion[0]){
-            return posicion[0]+1;
+            posibilidades.push(posicion[0]+1);
         } else if (destinoFinal <posicion[0]){
-            return posicion[0]-1;
+            posibilidades.push( posicion[0]-1);
         }else{
-            return posicion[0];
+            posibilidades.push( posicion[0]);
         }
+        if (posicion[1]< this.cantidadColumnas-2){
+            if (this.cantidadColumnas-1-posicion[1]>cantDiagonales){
+                if (posicion[0]!=0){
+                    posibilidades.push(posicion[0]-1);
+                }
+                if (posicion[0]!=this.cantidadFilas-1){
+                    posibilidades.push(posicion[0]+1);
+                }
+                
+            }
+
+
+        }
+
+
+        return posibilidades;
     }
 }
 module.exports=Mapa;
