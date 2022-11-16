@@ -86,7 +86,7 @@ test("Crear paquetes y que lleguen a destino teniendo dos filas",()=>{
     expect(facturacion1.colaDeEspera[0].id).toBe(paquete1.id);
 }); 
 
-test("Crear paquetes y que lleguen a destino teniendo dos filas (2)",()=>{
+test("Decidir el siguiente salto teniendo dos(2) filas",()=>{
     var mapa=new Mapa(2,2);
 
     let local1=new Centro(new Local(),4);
@@ -100,6 +100,6 @@ test("Crear paquetes y que lleguen a destino teniendo dos filas (2)",()=>{
     mapa.agregarFila([local1,facturacion1]);
     mapa.agregarFila([local2,facturacion2]);
     
-    mapa.pasarTurno(0);
-    expect(facturacion2.colaDeEspera[0].id).toBe(paquete1.id);
+    
+    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(1);
 }); 
