@@ -100,6 +100,26 @@ test("Decidir el siguiente salto teniendo dos(2) filas",()=>{
     mapa.agregarFila([local1,facturacion1]);
     mapa.agregarFila([local2,facturacion2]);
     
-    
     expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(1);
+}); 
+
+test("Decidir el siguiente salto teniendo 3 filas",()=>{
+    var mapa=new Mapa(3,2);
+
+    let local1=new Centro(new Local(),4);
+    let facturacion1=new Centro(new Facturacion(),5);
+
+    let local2=new Centro(new Local(),3);
+    let facturacion2=new Centro(new Facturacion(),5);
+    
+    let local3=new Centro(new Local(),3);
+    let facturacion3=new Centro(new Facturacion(),5);
+    var paquete1=new Paquete(1,"Muy rapido",4);
+    local2.colaDeSalida.push(paquete1);
+    
+    mapa.agregarFila([local1,facturacion1]);
+    mapa.agregarFila([local2,facturacion2]);
+    mapa.agregarFila([local3,facturacion3]);
+    
+    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(0);
 }); 
