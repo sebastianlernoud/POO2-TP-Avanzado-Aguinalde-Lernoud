@@ -4,7 +4,11 @@ function Distribucion(){
         var texto ="";
         let paquete;
         while (i<10 && colaDeEspera.length>0){
+            
             paquete=colaDeEspera.shift();
+            if (posicion==undefined){
+                posicion=paquete.destino[paquete.destino.length-1];
+            }
             texto +="Entregando paquete id "+ paquete.id+" al Destino "+posicion+", ttl="+paquete.ttl+"\n";
             i++;
         }
