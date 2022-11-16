@@ -184,9 +184,8 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     local2.colaDeSalida.push(paquete3); //sube
     let id1=paquete1.id;
     let ttl1=paquete1.ttl -4;
-    let destino= local1.colaDeSalida[0].destino;
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
     }
-    expect(mapa.pasarTurno(0)).toBe("Entregando paquete id "+id1+" al destino "+destino+", ttl="+ttl1);
+    expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al destino "+1+", ttl="+ttl1);
 });
