@@ -29,6 +29,9 @@ function Centro (tipo,longitudCola) {
             var paquete=this.colaDeSalida[index];
             centro.recibirPaquete(paquete);
             this.colaDeSalida.splice(index,1);
+            if (paquete.id==19){
+                console.log(centro.colaDeEspera[centro.colaDeEspera.length-1]);
+            }
         }
     }
     this.ordenar=(cola)=>{
