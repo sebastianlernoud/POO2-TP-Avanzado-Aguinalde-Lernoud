@@ -70,13 +70,13 @@ function Mapa(filas,columnas){
         if (cantDiagonalesSiBaja<0){
             cantDiagonalesSiBaja=-1*cantDiagonalesSiBaja;
         }
-        if (posicion[0]<this.cantidadFilas-1 
-            && posicion[1]<this.cantidadColumnas-2 
-            && cantDiagonalesSiBaja<=cantMovidas-1){
+        if (posicion[0]<this.cantidadFilas-1 &&
+            posicion[1]<this.cantidadColumnas-2 &&
+             cantDiagonalesSiBaja<=cantMovidas-1){
             return true;
-        } else{
-            return false;
-        }
+        } 
+        return false;
+        
 
     }
 
