@@ -14,7 +14,7 @@ function Mapa(filas,columnas){
         
         let texto = "";
         for(let i=0;i<this.cantidadFilas;i++){
-            //let texto = this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
+            texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
             for (let j=this.cantidadColumnas-2;j>=0;j--){
                 this.filas[i][j].procesarPaquetes();
                 while (this.filas[i][j].colaDeSalida.length>0){
