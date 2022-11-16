@@ -30,7 +30,7 @@ function Centro (tipo,longitudCola) {
             centro.recibirPaquete(paquete);
             this.colaDeSalida.splice(index,1);
             if (paquete.id==19){
-                console.log(centro.colaDeEspera[centro.colaDeEspera.length-1]);
+                console.log(centro.longitudCola);
             }
         }
     }

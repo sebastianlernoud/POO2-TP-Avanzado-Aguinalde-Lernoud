@@ -131,11 +131,11 @@ test("Decidir el siguiente salto teniendo 3 filas",()=>{
 test("Enviar al siguiente salto teniendo 2 filas",()=>{
     var mapa=new Mapa(2,2);
 
-    let local1=new Centro(new Local(),4);
-    let facturacion1=new Centro(new Facturacion(),5);
+    let local1=new Centro(new Local(),1);
+    let facturacion1=new Centro(new Facturacion(),2);
 
     let local2=new Centro(new Local(),3);
-    let facturacion2=new Centro(new Facturacion(),5);
+    let facturacion2=new Centro(new Facturacion(),4);
     
     var paquete1=new Paquete(1,"Muy rapido",4);
     var paquete2=new Paquete(2,"Muy rapido",4);
