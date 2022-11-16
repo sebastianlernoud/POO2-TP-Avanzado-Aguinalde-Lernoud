@@ -63,8 +63,8 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila y 4 columnas
         mapa.pasarTurno(0);
     }
     
-    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al Destino"+destino+", ttl="+ttl1);
-    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al Destino"+destino+", ttl="+ttl2);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id1+" al Destino "+destino+", ttl="+ttl1);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al Destino "+destino+", ttl="+ttl2);
 });
 
 test("Crear paquetes y que lleguen a destino teniendo dos filas",()=>{
