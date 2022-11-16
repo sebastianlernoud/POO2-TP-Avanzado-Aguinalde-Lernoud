@@ -39,9 +39,9 @@ function Mapa(filas,columnas){
     this.siguienteSalto=(paquete,posicion)=>{
         let destinoFinal=paquete.destino-1;
         if (destinoFinal >posicion[0]){
-            return posicion[0]-1;
-        } else if (destinoFinal <posicion[0]){
             return posicion[0]+1;
+        } else if (destinoFinal <posicion[0]){
+            return posicion[0]-1;
         }else{
             return posicion[0];
         }
