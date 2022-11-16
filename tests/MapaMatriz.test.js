@@ -103,31 +103,6 @@ test("Decidir el siguiente salto teniendo dos(2) filas",()=>{
     expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(1);
 }); 
 
-test("Decidir el siguiente salto teniendo 3 filas",()=>{
-    var mapa=new Mapa(3,2);
-
-    let local1=new Centro(new Local(),4);
-    let facturacion1=new Centro(new Facturacion(),5);
-
-    let local2=new Centro(new Local(),3);
-    let facturacion2=new Centro(new Facturacion(),5);
-    
-    let local3=new Centro(new Local(),3);
-    let facturacion3=new Centro(new Facturacion(),5);
-    var paquete1=new Paquete(1,"Muy rapido",4);
-    var paquete2=new Paquete(2,"Muy rapido",4);
-    var paquete3=new Paquete(2,"Muy rapido",4);
-    
-    mapa.agregarFila([local1,facturacion1]);
-    mapa.agregarFila([local2,facturacion2]);
-    mapa.agregarFila([local3,facturacion3]);
-    
-    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(0); //Derecho
-    expect(mapa.siguienteSalto(paquete2,[0,0])).toBe(1); //Diagonal abajo
-    expect(mapa.siguienteSalto(paquete3,[2,0])).toBe(1); //Diagonal arriba
-
-}); 
-
 test("Enviar al siguiente salto teniendo 2 filas",()=>{
     var mapa=new Mapa(2,2);
 
@@ -197,35 +172,35 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
 });
 
 
-// test("Que un paquete pueda decidir seguir derecho en vez de ir en diagonal si la cola de espera está llena",()=>{
-//     let mapa=new Mapa(2,4);
-//     let local1=new Centro(new Local(),3);
-//     let facturacion1=new Centro(new Facturacion(),1);
-//     let calidad1 = new Centro(new Calidad(),3);
-//     let distribucion1 = new Centro(new Distribucion(),3);
+test("Que un paquete pueda decidir seguir derecho en vez de ir en diagonal si la cola de espera está llena",()=>{
+    let mapa=new Mapa(2,4);
+    let local1=new Centro(new Local(),3);
+    let facturacion1=new Centro(new Facturacion(),1);
+    let calidad1 = new Centro(new Calidad(),3);
+    let distribucion1 = new Centro(new Distribucion(),3);
 
-//     let local2=new Centro(new Local(),3);
-//     let facturacion2=new Centro(new Facturacion(),1);
-//     let calidad2 = new Centro(new Calidad(),3);
-//     let distribucion2 = new Centro(new Distribucion(),3);
+    let local2=new Centro(new Local(),3);
+    let facturacion2=new Centro(new Facturacion(),1);
+    let calidad2 = new Centro(new Calidad(),3);
+    let distribucion2 = new Centro(new Distribucion(),3);
     
-//     mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
-//     mapa.agregarFila([local2,facturacion2,calidad2,distribucion2]);
+    mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
+    mapa.agregarFila([local2,facturacion2,calidad2,distribucion2]);
 
-//     var paquete1=new Paquete(1,"Muy rapido",4);
-//     var paquete2 = new Paquete(1,"Rapido",4);
+    var paquete1=new Paquete(1,"Muy rapido",4);
+    var paquete2 = new Paquete(1,"Rapido",4);
    
-//     let id1=paquete1.id;
-//     let id2=paquete2.id;
-//     local1.colaDeSalida.push(paquete1); 
-//     local1.colaDeSalida.push(paquete2);
+    let id1=paquete1.id;
+    let id2=paquete2.id;
+    local1.colaDeSalida.push(paquete1); 
+    local1.colaDeSalida.push(paquete2);
 
-//     mapa.pasarTurno();
-//     expect(facturacion1.colaDeEspera[0].id).toBe(id1);
-//     expect(facturacion2.colaDeEspera[0].id).toBe(id2);
+    mapa.pasarTurno();
+    expect(facturacion1.colaDeEspera[0].id).toBe(id1);
+    expect(facturacion2.colaDeEspera[0].id).toBe(id2);
 
 
-// });
+});
 
 
 test("Ofrecer todas las movidas posibles para un paquete",()=>{
