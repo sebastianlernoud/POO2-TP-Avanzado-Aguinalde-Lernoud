@@ -44,7 +44,7 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     
 });
 
-test("Crear paquetes y que lleguen a destino teniendo solo una fila y 4 columnas",()=>{
+test("Crear paquetes y que lleguen a destino teniendo una fila y 4 columnas",()=>{
     var mapa=new Mapa(1,4);
 
     let local1=new Centro(new Local(),4);
@@ -54,10 +54,18 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila y 4 columnas
     
     mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
     mapa.pasarTurno(2);
-    let id1=local1.colaDeSalida[0].id;
-    let id2=local1.colaDeSalida[1].id;
-    let ttl1=local1.colaDeSalida[0].ttl-4;
-    let ttl2=local1.colaDeSalida[1].ttl-5;
+    
+    if (local1.colaDeSalida[0].ttl<=local1.colaDeSalida[1].ttl){
+        var id1=local1.colaDeSalida[0].id;
+        var id2=local1.colaDeSalida[1].id;
+        var ttl1=local1.colaDeSalida[0].ttl-4;
+        var ttl2=local1.colaDeSalida[1].ttl-5;
+    } else{
+        var id1=local1.colaDeSalida[1].id;
+        var id2=local1.colaDeSalida[0].id;
+        var ttl1=local1.colaDeSalida[1].ttl-4;
+        var ttl2=local1.colaDeSalida[0].ttl-5;
+    }
     let destino = local1.colaDeSalida[0].destino;
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
