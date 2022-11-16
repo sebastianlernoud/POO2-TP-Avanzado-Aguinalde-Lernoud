@@ -52,7 +52,7 @@ function Mapa(filas,columnas){
     
         if (this.puedeSubir(paquete,posicion)){
             posibilidades.push(posicion[0]-1);
-            console.log(paquete.id);
+            
         } 
         if (this.puedeIrDerecho(paquete,posicion)){
             posibilidades.push(posicion[0]);
