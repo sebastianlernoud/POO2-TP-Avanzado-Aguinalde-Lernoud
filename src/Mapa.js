@@ -66,13 +66,13 @@ function Mapa(filas,columnas){
 
     this.puedeBajar=(paquete,posicion)=>{
         let cantMovidas = this.cantidadColumnas-1-posicion[1];
-        let cantDiagonalesSiBaja = posicion[0]-paquete.destino;
+        let cantDiagonalesSiBaja = posicion[0]+1-(paquete.destino-1);
         if (cantDiagonalesSiBaja<0){
             cantDiagonalesSiBaja=-1*cantDiagonalesSiBaja;
         }
         if (posicion[0]<this.cantidadFilas-1 
             && posicion[1]<this.cantidadColumnas-2 
-            && cantDiagonalesSiBaja>=cantMovidas-1){
+            && cantDiagonalesSiBaja<=cantMovidas-1){
             return true;
         } else{
             return false;
@@ -82,7 +82,7 @@ function Mapa(filas,columnas){
 
     this.puedeSubir=(paquete,posicion)=>{
         let cantMovidas = this.cantidadColumnas-1-posicion[1];
-        let cantDiagonalesSiSube = posicion[0]-1-paquete.destino-1;
+        let cantDiagonalesSiSube = posicion[0]-1-(paquete.destino-1);
         if (cantDiagonalesSiSube<0){
             cantDiagonalesSiSube=-1*cantDiagonalesSiSube;
         }
