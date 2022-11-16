@@ -27,5 +27,33 @@ test("Crear una matriz y añadirle centros",()=>{
     expect(mapa.filas[0][0].colaDeEspera).toEqual([]);
 });
 
-// [[l1,l2,l3],//
-//  [f1,f2,f3],[] ]
+
+test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
+    var mapa=new Mapa(1,2);
+
+    let local1=new Centro(new Local(),4);
+    let facturacion1=new Centro(new Facturacion(),5);
+    
+    mapa.agregarFila([local1,facturacion1]);
+    mapa.pasarTurno(2);
+    let id1=local.colaDeSalida[0].id;
+    let id2=local.colaDeSalida[1].id;
+    mapa.pasarTurno(0);
+    expect(facturacion1.colaDeEspera[0].id).toBe(id1);
+    expect(facturacion1.colaDeEspera[1].id).toBe(id2);
+});
+
+/* test("Crear paquetes y que lleguen a destino teniendo dos filas",()=>{
+    var mapa=new Mapa(1,2);
+
+    let local1=new Centro(new Local(),4);
+    let facturacion1=new Centro(new Facturacion(),5);
+
+    let local2=new Centro(new Local(),3);
+    let facturacion2=new Centro(new Facturacion(),5);
+    
+    mapa.agregarFila([local1,facturacion1]);
+    mapa.agregarFila([local2,facturacion2])
+    
+    mapa.pasarTurno(2);
+}); */
