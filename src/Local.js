@@ -8,7 +8,7 @@ function Local(){
         for(let i =0;i<cantidad;i++){
             let paquete=new Paquete(this.darDestino(filas),this.darUrgencia(),columnas)
             colaDeSalida.push(paquete);
-            //console.log("Creando paquete "+paquete.id +", con destino "+paquete.destino+" y urgencia "+paquete.urgencia)
+            console.log("Creando paquete "+paquete.id +", con destino "+paquete.destino+" y urgencia "+paquete.urgencia)
         }
     }
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{}

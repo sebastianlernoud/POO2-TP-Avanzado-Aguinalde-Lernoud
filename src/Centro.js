@@ -25,11 +25,7 @@ function Centro (tipo,longitudCola) {
     }
     this.traspasarPaquete=(paquete,centro)=>{
         var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);
-        if (paquete.id==18){
-            console.log(index);
-        }
         if (index!=-1){
-           
             var paquete=this.colaDeSalida[index];
             centro.recibirPaquete(paquete);
             this.colaDeSalida.splice(index,1);

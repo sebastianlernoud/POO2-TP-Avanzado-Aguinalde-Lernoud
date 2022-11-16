@@ -30,9 +30,6 @@ function Mapa(filas,columnas){
                             
                             try{
                                 this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
-                                if (paquete.id==18){
-                                    console.log(destino);
-                                }
                                 paso=true;
                             } catch(error){
                                 cont++;
