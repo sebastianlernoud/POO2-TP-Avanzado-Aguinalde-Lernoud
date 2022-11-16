@@ -160,12 +160,15 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     local1.colaDeSalida.push(paquete2); 
     local1.colaDeSalida.push(paquete1); 
     local2.colaDeSalida.push(paquete3); 
+    
     let id1=paquete1.id;
     let id2=paquete2.id;
     let id3=paquete3.id;
     let ttl1=paquete1.ttl -4;
     let ttl2=paquete2.ttl -4;
     let ttl3=paquete3.ttl -5;
+    expect(local1.colaDeEspera[0].id).toBe(id2);
+    expect(local1.colaDeEspera[1].id).toBe(id1);
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
     }
