@@ -41,7 +41,6 @@ function Mapa(filas,columnas){
 
     this.siguienteSalto=(paquete,posicion)=>{
         let destinoFinal=paquete.destino-1;
-        let cantDiagonales=paquete.destino-1 - posicion[0];
         let posibilidades=[];
         if (destinoFinal >posicion[0]){
             posibilidades.push(posicion[0]+1);
@@ -53,6 +52,7 @@ function Mapa(filas,columnas){
     
         if (this.puedeSubir(paquete,posicion)){
             posibilidades.push(posicion[0]-1);
+            console.log(paquete.id);
         } 
         if (this.puedeIrDerecho(paquete,posicion)){
             posibilidades.push(posicion[0]);
