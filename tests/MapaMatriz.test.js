@@ -147,9 +147,12 @@ test("Enviar al siguiente salto teniendo 2 filas",()=>{
     local1.colaDeSalida.push(paquete2);
     local2.colaDeSalida.push(paquete3);
     mapa.pasarTurno(0);
-
+    //Chequeamos que  este en facturacion 1
+    //Chequeamos que  este en facturacion 2
+    //Chequeamos que  este local2
+    //Chequeamos que  este local1
     expect(facturacion1.colaDeEspera[0].id).toBe(paquete1.id);
     expect(mapa.siguienteSalto(paquete2,[0,0])).toBe(1);
     expect(facturacion2.colaDeEspera[0].id).toBe(paquete3.id);
-    expect(local2.colaDeSalida[0].id).toBe(paquete2.id);
+    expect(local1.colaDeSalida[0].id).toBe(paquete2.id);
 }); 
