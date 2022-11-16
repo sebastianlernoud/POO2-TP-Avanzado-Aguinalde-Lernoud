@@ -172,6 +172,14 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
         mapa.pasarTurno(0);
         expect(facturacion1.colaDeEspera[0].id).toBe(id1);
         expect(facturacion2.colaDeEspera[0].id).toBe(id2);
+
+        mapa.pasarTurno(0);
+        expect(calidad1.colaDeEspera[0].id).toBe(id1);
+        expect(calidad2.colaDeEspera[0].id).toBe(id2);
+
+        mapa.pasarTurno(0);
+        expect(distribucion1.colaDeEspera[0].id).toBe(id1);
+        expect(distribucion2.colaDeEspera[0].id).toBe(id2);
     
     expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
     "\nEntregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
