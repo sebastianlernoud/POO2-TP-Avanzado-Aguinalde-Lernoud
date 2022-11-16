@@ -52,7 +52,7 @@ test("Procesar paquetes en un centro de facturacion",()=>{
 });
 
 test("Procesar paquetes en un centro de distribucion",()=>{
-    var paquete= new Paquete();
+    var paquete= new Paquete("Destino 1");
     var centro = new Centro(new Distribucion(),10);
     for (let i=0;i<10;i++){
         centro.recibirPaquete(paquete);
