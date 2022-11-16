@@ -183,6 +183,8 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     local1.colaDeSalida.push(paquete1); // baja
     local2.colaDeSalida.push(paquete3); //sube
     let id1=paquete1.id;
+    let id2=paquete2.id;
+    let id3=paquete3.id;
     let ttl1=paquete1.ttl -4;
     let ttl2=paquete1.ttl -4;
     let ttl3=paquete1.ttl -3;
