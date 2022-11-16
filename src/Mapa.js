@@ -20,14 +20,24 @@ function Mapa(filas,columnas){
                 } else{
                     this.filas[i][j].procesarPaquetes();
                     while (this.filas[i][j].colaDeSalida.length>0){
-                        try {
-                            let paquete=this.filas[i][j].masUrgenteEnSalida();
-                            let destino = this.siguienteSalto(paquete,[i,j]);
-                            this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
+                    
+                        let paso=false;
+                        let paquete=this.filas[i][j].masUrgenteEnSalida();
+                        let destinos = this.siguienteSalto(paquete,[i,j]);
+                        let i=0;
+                        while (!paso && i<destinos.length){
+                            let destino = destinos[i];
+                            try{
+                                this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
+                                paso=true;
+                            } catch(error){
+                                i++;
+                                
+                            }
                         }
-                        catch(error){
-                            break;
-                        }
+                        
+                        
+                        
                     }
                 }
             }
