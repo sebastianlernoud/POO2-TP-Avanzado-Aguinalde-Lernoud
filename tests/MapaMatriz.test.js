@@ -50,6 +50,7 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     let facturacion1=new Centro(new Facturacion(),5);
     let calidad1 = new Centro(new Calidad(),3);
     let distribucion1 = new Centro(new Distribucion(),3);
+    
 
 
     mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
@@ -67,17 +68,20 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id2+" al "+destino+", ttl="+ttl2);
 });
 
-/* test("Crear paquetes y que lleguen a destino teniendo dos filas",()=>{
-    var mapa=new Mapa(1,2);
+test("Crear paquetes y que lleguen a destino teniendo dos filas",()=>{
+    var mapa=new Mapa(2,2);
 
     let local1=new Centro(new Local(),4);
     let facturacion1=new Centro(new Facturacion(),5);
 
     let local2=new Centro(new Local(),3);
     let facturacion2=new Centro(new Facturacion(),5);
+    var paquete1=new Paquete("Destino 1","Muy rapido",4);
+    local1.colaDeSalida.push(paquete1);
     
     mapa.agregarFila([local1,facturacion1]);
-    mapa.agregarFila([local2,facturacion2])
+    mapa.agregarFila([local2,facturacion2]);
     
-    mapa.pasarTurno(2);
-}); */
+    mapa.pasarTurno(0);
+    expect(facturacion1.colaDeEspera[0].id).toBe(paquete1.id);
+}); 
