@@ -13,18 +13,22 @@ function Mapa(filas,columnas){
     this.pasarTurno=(cantidadPaquetes=4)=>{
         
         let texto = "";
-        for(let i=0;i<this.cantidadFilas;i++){
-            texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
-            for (let j=this.cantidadColumnas-2;j>=0;j--){
-                this.filas[i][j].procesarPaquetes();
-                while (this.filas[i][j].colaDeSalida.length>0){
-                    try {
-                        let paquete=this.filas[i][j].masUrgenteEnSalida();
-                        let destino = this.siguienteSalto(paquete,[i,j]);
-                        this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
-                    }
-                    catch(error){
-                        break;
+        for (let j=this.cantidadColumnas-2;j>=0;j--){
+            
+            for(let i=0;i<this.cantidadFilas;i++){
+                if (j==this.cantidadColumnas-1){
+                    texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
+                } else{
+                    this.filas[i][j].procesarPaquetes();
+                    while (this.filas[i][j].colaDeSalida.length>0){
+                        try {
+                            let paquete=this.filas[i][j].masUrgenteEnSalida();
+                            let destino = this.siguienteSalto(paquete,[i,j]);
+                            this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
+                        }
+                        catch(error){
+                            break;
+                        }
                     }
                 }
             }
