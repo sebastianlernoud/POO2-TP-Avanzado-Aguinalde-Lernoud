@@ -4,11 +4,12 @@ function Centro (tipo,longitudCola) {
     this.colaDeSalida=[];
     this.longitudCola=longitudCola;
     this.recibirPaquete = (paquete) => {
-        if(paquete.id==18){
-            console.log("Pase ");
-        }
+        
         if (this.colaDeEspera.length<this.longitudCola){
             this.colaDeEspera.push(paquete);
+            if(paquete.id==18){
+                console.log("Pase ");
+            }
         } else{
             throw new Error("Cola de espera llena");
         }
