@@ -27,6 +27,9 @@ function Mapa(filas,columnas){
                         let cont=0;
                         while (!paso && cont<destinos.length){
                             let destino = destinos[cont];
+                            if (paquete.id==18){
+                                console.log(destino);
+                            }
                             try{
                                 this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
                                 paso=true;
