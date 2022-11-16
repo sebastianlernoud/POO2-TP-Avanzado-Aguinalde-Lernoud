@@ -20,8 +20,8 @@ function Mapa(filas,columnas){
                 while (this.filas[i][j].colaDeSalida.length>0){
                     try {
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
-                        
-                        this.filas[i][j].traspasarPaquete(paquete,this.filas[i][j+1]);
+                        let destino = this.siguienteSalto(paquete,[i,j]);
+                        this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
                     }
                     catch(error){
                         break;
