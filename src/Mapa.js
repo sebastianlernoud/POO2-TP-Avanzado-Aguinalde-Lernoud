@@ -21,6 +21,9 @@ function Mapa(filas,columnas){
                     try {
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
                         let destino = this.siguienteSalto(paquete,[i,j]);
+                        if (paquete.id==19){
+                            console.log("destino"+destino+"   "+i+"  "+j);
+                        }
                         this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
                     }
                     catch(error){
