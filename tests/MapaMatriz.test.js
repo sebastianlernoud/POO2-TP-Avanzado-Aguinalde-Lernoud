@@ -39,11 +39,12 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     let id1=local1.colaDeSalida[0].id;
     let id2=local1.colaDeSalida[1].id;
     mapa.pasarTurno(0);
-    expect(facturacion1.colaDeEspera[0].id).toBe(id1);
-    expect(facturacion1.colaDeEspera[1].id).toBe(id2);
+    expect(facturacion1.colaDeEspera[0].id==id1 || facturacion1.colaDeEspera[0].id==id2).toBeTruthy();
+    expect(facturacion1.colaDeEspera[1].id==id1 || facturacion1.colaDeEspera[1].id==id2).toBeTruthy();
+    
 });
 
-test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
+test("Crear paquetes y que lleguen a destino teniendo solo una fila y 4 columnas",()=>{
     var mapa=new Mapa(1,4);
 
     let local1=new Centro(new Local(),4);
@@ -51,8 +52,6 @@ test("Crear paquetes y que lleguen a destino teniendo solo una fila",()=>{
     let calidad1 = new Centro(new Calidad(),3);
     let distribucion1 = new Centro(new Distribucion(),3);
     
-
-
     mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
     mapa.pasarTurno(2);
     let id1=local1.colaDeSalida[0].id;
