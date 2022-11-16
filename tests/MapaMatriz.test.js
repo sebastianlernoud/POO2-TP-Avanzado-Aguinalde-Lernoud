@@ -115,11 +115,15 @@ test("Decidir el siguiente salto teniendo 3 filas",()=>{
     let local3=new Centro(new Local(),3);
     let facturacion3=new Centro(new Facturacion(),5);
     var paquete1=new Paquete(1,"Muy rapido",4);
-    local2.colaDeSalida.push(paquete1);
+    var paquete2=new Paquete(2,"Muy rapido",4);
+    var paquete3=new Paquete(2,"Muy rapido",4);
     
     mapa.agregarFila([local1,facturacion1]);
     mapa.agregarFila([local2,facturacion2]);
     mapa.agregarFila([local3,facturacion3]);
     
-    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(0);
+    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(0); //Derecho
+    expect(mapa.siguienteSalto(paquete2,[0,0])).toBe(1); //Diagonal abajo
+    expect(mapa.siguienteSalto(paquete3,[2,0])).toBe(-1); //Diagonal arriba
+
 }); 
