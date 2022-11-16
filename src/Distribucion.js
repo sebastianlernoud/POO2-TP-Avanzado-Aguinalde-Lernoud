@@ -7,7 +7,7 @@ function Distribucion(){
             
             paquete=colaDeEspera.shift();
             if (posicion==undefined){
-                posicion=paquete.destino[paquete.destino.length-1];
+                posicion=paquete.destino;
             }
             texto +="Entregando paquete id "+ paquete.id+" al Destino "+posicion+", ttl="+paquete.ttl+"\n";
             i++;

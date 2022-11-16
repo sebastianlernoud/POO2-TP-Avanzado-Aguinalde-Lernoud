@@ -6,7 +6,8 @@ function Local(){
             throw new Error("La cantidad no es valida");
         } 
         for(let i =0;i<cantidad;i++){
-            colaDeSalida.push(new Paquete("Destino 1",this.darUrgencia(),columnas));
+            colaDeSalida.push(new Paquete(this.darDestino(filas),this.darUrgencia(),columnas));
+            
         }
     }
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{}

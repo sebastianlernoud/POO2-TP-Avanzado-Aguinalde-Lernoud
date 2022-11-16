@@ -15,14 +15,17 @@ for (let i=3;i<7;i++){
 
 mapa.pasarTurno();
 
+let texto="";
+
+
 for (let k=0; k<6;k++){
     console.log("\n\nTurno "+k+"\n");
     console.log(mapa.pasarTurno(0));
     for (let i=0; i<4;i++){
-        console.log("|| Local " +i+" S="+mapa.filas[i][0].colaDeSalida.length +
-                    "  -- Facturacion "+i+ " E="+mapa.filas[i][1].colaDeEspera.length +" S="+mapa.filas[i][1].colaDeSalida.length+
-                    "  -- Calidad "+i+ " E="+mapa.filas[i][2].colaDeEspera.length +" S="+mapa.filas[i][2].colaDeSalida.length+
-                    "  --  Distribucion "+i+ " E="+mapa.filas[i][3].colaDeEspera.length +" ||");
+        console.log("|| Local " +i+"-> S="+mapa.filas[i][0].colaDeSalida.length +
+                    "  -- Facturacion "+i+ "-> E="+mapa.filas[i][1].colaDeEspera.length +" S="+mapa.filas[i][1].colaDeSalida.length+
+                    "  -- Calidad "+i+ "-> E="+mapa.filas[i][2].colaDeEspera.length +" S="+mapa.filas[i][2].colaDeSalida.length+
+                    "  --  Distribucion "+i+ "-> E="+mapa.filas[i][3].colaDeEspera.length +" ||");
     }
 }
 
