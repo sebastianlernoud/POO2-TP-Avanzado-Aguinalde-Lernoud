@@ -100,7 +100,7 @@ test("Decidir el siguiente salto teniendo dos(2) filas",()=>{
     mapa.agregarFila([local1,facturacion1]);
     mapa.agregarFila([local2,facturacion2]);
     
-    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(1);
+    expect(mapa.siguienteSalto(paquete1,[0,0])).toBe([1]);
 }); 
 
 test("Enviar al siguiente salto teniendo 2 filas",()=>{
