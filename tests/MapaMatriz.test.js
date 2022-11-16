@@ -167,7 +167,7 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
         mapa.pasarTurno(0);
     }
     expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
-    "Entregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
+    "\nEntregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al Destino "+1+", ttl="+ttl3)
 });
 
