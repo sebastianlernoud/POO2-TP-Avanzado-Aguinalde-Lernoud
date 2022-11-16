@@ -94,7 +94,7 @@ test("Decidir el siguiente salto teniendo dos(2) filas",()=>{
 
     let local2=new Centro(new Local(),3);
     let facturacion2=new Centro(new Facturacion(),5);
-    var paquete1=new Paquete("Destino 2","Muy rapido",4);
+    var paquete1=new Paquete(2,"Muy rapido",4);
     local1.colaDeSalida.push(paquete1);
     
     mapa.agregarFila([local1,facturacion1]);

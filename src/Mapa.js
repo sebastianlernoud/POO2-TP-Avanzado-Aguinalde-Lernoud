@@ -20,6 +20,7 @@ function Mapa(filas,columnas){
                 while (this.filas[i][j].colaDeSalida.length>0){
                     try {
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
+                        
                         this.filas[i][j].traspasarPaquete(paquete,this.filas[i][j+1]);
                     }
                     catch(error){
@@ -33,6 +34,17 @@ function Mapa(filas,columnas){
             this.filas[0][0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
         }
         return texto;
+    }
+
+    this.siguienteSalto=(paquete,posicion)=>{
+        let destinoFinal=paquete.destino-1;
+        if (destinoFinal >posicion[0]){
+            return posicion[0]-1;
+        } else if (destinoFinal <posicion[0]){
+            return posicion[0]+1;
+        }else{
+            return posicion[0];
+        }
     }
 }
 module.exports=Mapa;
