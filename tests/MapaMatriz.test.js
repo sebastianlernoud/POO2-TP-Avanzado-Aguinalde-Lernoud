@@ -135,41 +135,42 @@ test("",()=>{
 
 });
 
-// test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
-//     let mapa=new Mapa(2,4);
-//     let local1=new Centro(new Local(),3);
-//     let facturacion1=new Centro(new Facturacion(),1);
-//     let calidad1 = new Centro(new Calidad(),3);
-//     let distribucion1 = new Centro(new Distribucion(),3);
+test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
+    let mapa=new Mapa(2,4);
+    let local1=new Centro(new Local(),3);
+    let facturacion1=new Centro(new Facturacion(),1);
+    let calidad1 = new Centro(new Calidad(),3);
+    let distribucion1 = new Centro(new Distribucion(),3);
 
-//     let local2=new Centro(new Local(),3);
-//     let facturacion2=new Centro(new Facturacion(),1);
-//     let calidad2 = new Centro(new Calidad(),3);
-//     let distribucion2 = new Centro(new Distribucion(),3);
+    let local2=new Centro(new Local(),3);
+    let facturacion2=new Centro(new Facturacion(),1);
+    let calidad2 = new Centro(new Calidad(),3);
+    let distribucion2 = new Centro(new Distribucion(),3);
     
-//     mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
-//     mapa.agregarFila([local2,facturacion2,calidad2,distribucion2]);
+    mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
+    mapa.agregarFila([local2,facturacion2,calidad2,distribucion2]);
 
-//     var paquete1=new Paquete(1,"Muy rapido",4);
-//     var paquete2 = new Paquete(2,"Rapido",4);
-//     var paquete3 = new Paquete(1,"Normal",4);
+    var paquete1=new Paquete(1,"Muy rapido",4);
+    var paquete2 = new Paquete(2,"Rapido",4);
+    var paquete3 = new Paquete(1,"Normal",4);
 
-//     local1.colaDeSalida.push(paquete2); // va derecho
-//     local1.colaDeSalida.push(paquete1); // baja
-//     local2.colaDeSalida.push(paquete3); //sube
-//     let id1=paquete1.id;
-//     let id2=paquete2.id;
-//     let id3=paquete3.id;
-//     let ttl1=paquete1.ttl -4;
-//     let ttl2=paquete2.ttl -4;
-//     let ttl3=paquete3.ttl -5;
-//     for (let i=0;i<3;i++){
-//         mapa.pasarTurno(0);
-//     }
-//     expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
-//     "Entregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
-//     expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al Destino "+1+", ttl="+ttl3)
-// });
+    local1.colaDeSalida.push(paquete2); // va derecho
+    local1.colaDeSalida.push(paquete1); // baja
+    local2.colaDeSalida.push(paquete3); //sube
+    let id1=paquete1.id;
+    let id2=paquete2.id;
+    let id3=paquete3.id;
+    let ttl1=paquete1.ttl -4;
+    let ttl2=paquete2.ttl -4;
+    let ttl3=paquete3.ttl -5;
+    for (let i=0;i<3;i++){
+        mapa.pasarTurno(0);
+        console.log(1);
+    }
+    expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
+    "Entregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);
+    expect(mapa.pasarTurno()).toBe("Entregando paquete id "+id3+" al Destino "+1+", ttl="+ttl3)
+});
 
 
 test("Que un paquete pueda decidir seguir derecho en vez de ir en diagonal si la cola de espera está llena",()=>{
