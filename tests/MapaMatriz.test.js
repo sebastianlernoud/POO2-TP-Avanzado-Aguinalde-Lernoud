@@ -149,7 +149,7 @@ test("Enviar al siguiente salto teniendo 2 filas",()=>{
     mapa.pasarTurno(0);
 
     expect(facturacion1.colaDeEspera[0].id).toBe(paquete1.id);
-    expect(local2.colaDeSalida[0].id).toBe(paquete2.id);
+    expect(mapa.siguienteSalto(paquete2,[0,0])).toBe(1);
     expect(facturacion2.colaDeEspera[0].id).toBe(paquete3.id);
     expect(facturacion2.colaDeEspera[1].id).toBe(paquete2.id);
 }); 
