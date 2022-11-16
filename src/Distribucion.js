@@ -5,7 +5,7 @@ function Distribucion(){
         let paquete;
         while (i<10 && colaDeEspera.length>0){
             paquete=colaDeEspera.shift();
-            texto +="Entregando paquete id "+ paquete.id+" al destino "+posicion+", ttl="+paquete.ttl+"\n";
+            texto +="Entregando paquete id "+ paquete.id+" al Destino "+posicion+", ttl="+paquete.ttl+"\n";
             i++;
         }
         return texto.slice(0,-1);
