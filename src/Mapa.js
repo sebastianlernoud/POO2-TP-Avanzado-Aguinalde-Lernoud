@@ -50,22 +50,61 @@ function Mapa(filas,columnas){
         }else{
             posibilidades.push( posicion[0]);
         }
-        if (posicion[1]< this.cantidadColumnas-2){
-            if (this.cantidadColumnas-1-posicion[1]>cantDiagonales){
-                if (posicion[0]!=0){
-                    posibilidades.push(posicion[0]-1);
-                }
-                if (posicion[0]!=this.cantidadFilas-1){
-                    posibilidades.push(posicion[0]+1);
-                }
-                
-            }
-
-
+    
+        if (this.puedeSubir(paquete,posicion)){
+            posibilidades.push(posicion[0]-1);
+        } 
+        if (this.puedeIrDerecho(paquete,posicion)){
+            posibilidades.push(posicion[0]);
+        }
+        if (this.puedeBajar(paquete,posicion)){
+            posibilidades.push(posicion[0]+1);
         }
 
-
         return posibilidades;
+    }
+
+    this.puedeBajar=(paquete,posicion)=>{
+        let cantMovidas = this.cantidadColumnas-1-posicion[1];
+        let cantDiagonalesSiBaja = posicion[0]-paquete.destino;
+        if (cantDiagonalesSiBaja<0){
+            cantDiagonalesSiBaja=-1*cantDiagonalesSiBaja;
+        }
+        if (posicion[0]<this.cantidadFilas-1 
+            && posicion[1]<this.cantidadColumnas-2 
+            && cantDiagonalesSiBaja<=cantMovidas-1){
+            return true;
+        } else{
+            return false;
+        }
+
+    }
+
+    this.puedeSubir=(paquete,posicion)=>{
+        let cantMovidas = this.cantidadColumnas-1-posicion[1];
+        let cantDiagonalesSiSube = posicion[0]-1-paquete.destino-1;
+        if (cantDiagonalesSiSube<0){
+            cantDiagonalesSiSube=-1*cantDiagonalesSiSube;
+        }
+        if(posicion[0]!=0 && 
+            posicion[1]<this.cantidadColumnas-2 &&
+            cantDiagonalesSiSube <=cantMovidas-1 ){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    this.puedeIrDerecho=(paquete,posicion)=>{
+        let cantMovidas = this.cantidadColumnas-1-posicion[1];
+        let cantDiagonalesNecesarias = posicion[0]-paquete.destino-1;
+        if (cantDiagonalesNecesarias<0){
+            cantDiagonalesNecesarias=-1*cantDiagonalesNecesarias;
+        }
+        if(cantDiagonalesNecesarias<=cantMovidas-1){
+            return true;
+        }
+        return false;
     }
 }
 module.exports=Mapa;
