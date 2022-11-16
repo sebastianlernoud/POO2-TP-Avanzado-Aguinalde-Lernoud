@@ -11,9 +11,10 @@ function Mapa(filas,columnas){
     }
 
     this.pasarTurno=(cantidadPaquetes=4)=>{
-        let texto = this.filas[this.cantidadColumnas-1].procesarPaquetes();
+        
 
         for(let i=0;i<this.cantidadFilas;i++){
+            //let texto = this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
             for (let j=this.cantidadColumnas-2;j>=0;j--){
                 this.filas[i][j].procesarPaquetes();
                 while (this.filas[i][j].colaDeSalida.length>0){
@@ -29,7 +30,7 @@ function Mapa(filas,columnas){
         }
 
         if (cantidadPaquetes!=0){
-            this.filas[0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
+            this.filas[0][0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
         }
         return texto;
     }
