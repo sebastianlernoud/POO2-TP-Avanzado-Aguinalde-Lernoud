@@ -101,5 +101,5 @@ test("Crear paquetes y que lleguen a destino teniendo dos filas (2)",()=>{
     mapa.agregarFila([local2,facturacion2]);
     
     mapa.pasarTurno(0);
-    expect(facturacion1.colaDeEspera[0].id).toBe(paquete1.id);
+    expect(facturacion2.colaDeEspera[0].id).toBe(paquete1.id);
 }); 
