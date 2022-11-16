@@ -13,7 +13,7 @@ function Centro (tipo,longitudCola) {
     this.crearPaquetes=(cantidad,columnas)=>{
         this.tipo.crearPaquetes(cantidad,columnas,this.colaDeSalida);
     }
-    this.procesarPaquetes=()=>{
+    this.procesarPaquetes=(posicion)=>{
         this.colaDeEspera.forEach(paquete => {
             paquete.disminuirTTL();
         });
@@ -21,7 +21,7 @@ function Centro (tipo,longitudCola) {
             paquete.disminuirTTL();
         });
         this.ordenar(this.colaDeEspera);
-        return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida);
+        return this.tipo.procesarPaquetes(this.colaDeEspera,this.colaDeSalida,posicion);
     }
     this.traspasarPaquete=(paquete,centro)=>{
         var index = this.colaDeSalida.findIndex(element=> element.id==paquete.id);

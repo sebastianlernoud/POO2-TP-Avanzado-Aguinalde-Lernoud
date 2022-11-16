@@ -155,3 +155,38 @@ test("Enviar al siguiente salto teniendo 2 filas",()=>{
     expect(facturacion2.colaDeEspera[1].id).toBe(paquete3.id);
     expect(facturacion2.colaDeEspera[0].id).toBe(paquete2.id);
 }); 
+
+test("",()=>{
+
+});
+
+test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
+    let mapa=new Mapa(2,4);
+    let local1=new Centro(new Local(),3);
+    let facturacion1=new Centro(new Facturacion(),1);
+    let calidad1 = new Centro(new Calidad(),3);
+    let distribucion1 = new Centro(new Distribucion(),3);
+
+    let local2=new Centro(new Local(),3);
+    let facturacion2=new Centro(new Facturacion(),1);
+    let calidad2 = new Centro(new Calidad(),3);
+    let distribucion2 = new Centro(new Distribucion(),3);
+    
+    mapa.agregarFila([local1,facturacion1,calidad1,distribucion1]);
+    mapa.agregarFila([local2,facturacion2,calidad2,distribucion2]);
+
+    var paquete1=new Paquete(1,"Muy rapido",4);
+    var paquete2 = new Paquete(2,"Rapido",4);
+    var paquete3 = new Paquete(1,"Normal",4);
+
+    local1.colaDeSalida.push(paquete2); // va derecho
+    local1.colaDeSalida.push(paquete1); // baja
+    local2.colaDeSalida.push(paquete3); //sube
+    let id1=paquete1.id;
+    let ttl1=paquete1.ttl -4;
+    let destino= local1.colaDeSalida[0].destino;
+    for (let i=0;i<3;i++){
+        mapa.pasarTurno(0);
+    }
+    expect(mapa.pasarTurno(0)).toBe("Entregando paquete id "+id1+" al destino "+destino+", ttl="+ttl1);
+});
