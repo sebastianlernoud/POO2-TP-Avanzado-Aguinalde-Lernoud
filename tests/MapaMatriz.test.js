@@ -165,7 +165,6 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     let ttl3=paquete3.ttl -5;
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
-        console.log(1);
     }
     expect(mapa.pasarTurno(0)).toContain("Entregando paquete id "+id1+" al Destino "+1+", ttl="+ttl1+
     "Entregando paquete id "+id2+" al Destino "+2+", ttl="+ttl2);

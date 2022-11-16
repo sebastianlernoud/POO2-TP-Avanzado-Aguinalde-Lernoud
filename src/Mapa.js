@@ -19,7 +19,8 @@ function Mapa(filas,columnas){
                     texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes(i+1);
                 } else{
                     this.filas[i][j].procesarPaquetes();
-                    while (this.filas[i][j].colaDeSalida.length>0){
+                    var longitudCola= this.filas[i][j].colaDeSalida.length;
+                    while (longitudCola>0){
                     
                         let paso=false;
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
@@ -35,9 +36,7 @@ function Mapa(filas,columnas){
                                 
                             }
                         }
-                        
-                        
-                        
+                        longitudCola--;
                     }
                 }
             }
