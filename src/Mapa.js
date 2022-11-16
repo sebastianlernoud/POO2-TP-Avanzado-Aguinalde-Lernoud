@@ -21,7 +21,6 @@ function Mapa(filas,columnas){
                     this.filas[i][j].procesarPaquetes();
                     var longitudCola= this.filas[i][j].colaDeSalida.length;
                     while (longitudCola>0){
-                    
                         let paso=false;
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
                         let destinos = this.siguienteSalto(paquete,[i,j]);
