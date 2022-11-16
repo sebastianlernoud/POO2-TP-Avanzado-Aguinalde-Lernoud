@@ -108,7 +108,7 @@ test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de
 
 test("Despachar a destino",()=>{
     var distribucion=new Centro(new Distribucion(),5);
-    var paquete = new Paquete("Destino 1","Muy rapido",4);
+    var paquete = new Paquete(1,"Muy rapido",4);
     distribucion.recibirPaquete(paquete);
     let id =paquete.id;
     expect(distribucion.procesarPaquetes()).toBe("Entregando paquete id "+id+" al Destino 1, ttl=3");
@@ -116,8 +116,8 @@ test("Despachar a destino",()=>{
 
 test("Despachar paquetes a destino",()=>{
     var distribucion=new Centro(new Distribucion(),5);
-    var paquete1 = new Paquete("Destino 1","Muy rapido",4);
-    var paquete2 = new Paquete("Destino 1","Muy rapido",4);
+    var paquete1 = new Paquete(1,"Muy rapido",4);
+    var paquete2 = new Paquete(1,"Muy rapido",4);
     distribucion.recibirPaquete(paquete1);
     distribucion.recibirPaquete(paquete2);
     let id1 =paquete1.id;
