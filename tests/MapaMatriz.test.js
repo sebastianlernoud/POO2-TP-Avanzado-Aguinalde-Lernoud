@@ -124,6 +124,6 @@ test("Decidir el siguiente salto teniendo 3 filas",()=>{
     
     expect(mapa.siguienteSalto(paquete1,[0,0])).toBe(0); //Derecho
     expect(mapa.siguienteSalto(paquete2,[0,0])).toBe(1); //Diagonal abajo
-    expect(mapa.siguienteSalto(paquete3,[2,0])).toBe(-1); //Diagonal arriba
+    expect(mapa.siguienteSalto(paquete3,[2,0])).toBe(1); //Diagonal arriba
 
 }); 
