@@ -16,7 +16,7 @@ function Mapa(filas,columnas){
         for (let j=this.cantidadColumnas-1;j>=0;j--){
             for(let i=0;i<this.cantidadFilas;i++){
                 if (j==this.cantidadColumnas-1){
-                    texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes(i+1);
+                    texto += this.filas[i][this.cantidadColumnas-1].procesarPaquetes(i+1)+"\n";
                 } else{
                     this.filas[i][j].procesarPaquetes();
                     var longitudCola= this.filas[i][j].colaDeSalida.length;
@@ -49,7 +49,7 @@ function Mapa(filas,columnas){
             }
             
         }
-        return texto;
+        return texto.slice(0,-1);
     }
 
     this.siguienteSalto=(paquete,posicion)=>{
