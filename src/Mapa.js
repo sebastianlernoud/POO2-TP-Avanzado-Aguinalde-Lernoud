@@ -12,7 +12,7 @@ function Mapa(filas,columnas){
 
     this.pasarTurno=(cantidadPaquetes=4)=>{
         
-
+        let texto = "";
         for(let i=0;i<this.cantidadFilas;i++){
             //let texto = this.filas[i][this.cantidadColumnas-1].procesarPaquetes();
             for (let j=this.cantidadColumnas-2;j>=0;j--){
