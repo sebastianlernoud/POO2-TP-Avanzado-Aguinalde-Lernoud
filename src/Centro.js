@@ -10,8 +10,8 @@ function Centro (tipo,longitudCola) {
             throw new Error("Cola de espera llena");
         }
     }
-    this.crearPaquetes=(cantidad,columnas)=>{
-        this.tipo.crearPaquetes(cantidad,columnas,this.colaDeSalida);
+    this.crearPaquetes=(cantidad,columnas,filas)=>{
+        this.tipo.crearPaquetes(cantidad,columnas,filas,this.colaDeSalida);
     }
     this.procesarPaquetes=(posicion)=>{
         this.colaDeEspera.forEach(paquete => {

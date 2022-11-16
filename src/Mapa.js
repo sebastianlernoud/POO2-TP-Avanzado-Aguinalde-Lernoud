@@ -43,7 +43,11 @@ function Mapa(filas,columnas){
         }
 
         if (cantidadPaquetes!=0){
-            this.filas[0][0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas);
+
+            for (let k=0;k<this.cantidadFilas;k++){
+                this.filas[k][0].crearPaquetes(cantidadPaquetes,this.cantidadColumnas,this.cantidadFilas);
+            }
+            
         }
         return texto;
     }

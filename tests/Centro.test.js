@@ -98,7 +98,7 @@ test("Pasar un paquete de Local a Centro de Facturacion",()=>{
 test("Pasar 4 paquetes de Local a Centro de Facturacion con capacidad máxima de 3",()=>{
     var local = new Centro(new Local(),3);
     var centroFacturacion = new Centro(new Facturacion(),3);
-    local.crearPaquetes(5,4);
+    local.crearPaquetes(5,4,1);
     for (let i=0;i<3;i++){
         local.traspasarPaquete(local.colaDeSalida[0],centroFacturacion);
     }
