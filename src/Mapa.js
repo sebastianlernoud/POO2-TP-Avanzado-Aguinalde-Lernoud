@@ -97,7 +97,7 @@ function Mapa(filas,columnas){
 
     this.puedeIrDerecho=(paquete,posicion)=>{
         let cantMovidas = this.cantidadColumnas-1-posicion[1];
-        let cantDiagonalesNecesarias = posicion[0]-paquete.destino-1;
+        let cantDiagonalesNecesarias = posicion[0]-(paquete.destino-1);
         if (cantDiagonalesNecesarias<0){
             cantDiagonalesNecesarias=-1*cantDiagonalesNecesarias;
         }
