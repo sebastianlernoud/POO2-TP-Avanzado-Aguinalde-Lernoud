@@ -24,6 +24,9 @@ function Mapa(filas,columnas){
                         let paso=false;
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
                         let destinos = this.siguienteSalto(paquete,[i,j]);
+                        if (paquete.id==18){
+                            console.log(destinos);
+                        }
                         let cont=0;
                         while (!paso && cont<destinos.length){
                             let destino = destinos[cont];
