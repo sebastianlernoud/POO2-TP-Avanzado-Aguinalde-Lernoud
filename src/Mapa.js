@@ -24,14 +24,14 @@ function Mapa(filas,columnas){
                         let paso=false;
                         let paquete=this.filas[i][j].masUrgenteEnSalida();
                         let destinos = this.siguienteSalto(paquete,[i,j]);
-                        let i=0;
-                        while (!paso && i<destinos.length){
-                            let destino = destinos[i];
+                        let cont=0;
+                        while (!paso && cont<destinos.length){
+                            let destino = destinos[cont];
                             try{
                                 this.filas[i][j].traspasarPaquete(paquete,this.filas[destino][j+1]);
                                 paso=true;
                             } catch(error){
-                                i++;
+                                cont++;
                                 
                             }
                         }
