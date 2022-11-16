@@ -130,16 +130,12 @@ test("Enviar al siguiente salto teniendo 2 filas",()=>{
     expect(facturacion2.colaDeEspera[0].id).toBe(paquete2.id);
 }); 
 
-test("",()=>{
-
-});
-
 test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
-    let mapa=new Mapa(2,4);
+    let mapa=new Mapa(2,2);
     let local1=new Centro(new Local(),3);
     let facturacion1=new Centro(new Facturacion(),1);
     let calidad1 = new Centro(new Calidad(),3);
-    let distribucion1 = new Centro(new Distribucion(),3);
+    let distribucion1 = new Centro(new Distribucion(),8);
 
     let local2=new Centro(new Local(),3);
     let facturacion2=new Centro(new Facturacion(),1);
@@ -153,9 +149,9 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     var paquete2 = new Paquete(2,"Rapido",4);
     var paquete3 = new Paquete(1,"Normal",4);
 
-    local1.colaDeSalida.push(paquete2); // va derecho
-    local1.colaDeSalida.push(paquete1); // baja
-    local2.colaDeSalida.push(paquete3); //sube
+    local1.colaDeSalida.push(paquete2); 
+    local1.colaDeSalida.push(paquete1); 
+    local2.colaDeSalida.push(paquete3); 
     let id1=paquete1.id;
     let id2=paquete2.id;
     let id3=paquete3.id;
