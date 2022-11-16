@@ -187,7 +187,7 @@ test("Que el paquete con mayor urgencia llegue a destino primero",()=>{
     let id3=paquete3.id;
     let ttl1=paquete1.ttl -4;
     let ttl2=paquete2.ttl -4;
-    let ttl3=paquete3.ttl -3;
+    let ttl3=paquete3.ttl -5;
     for (let i=0;i<3;i++){
         mapa.pasarTurno(0);
     }
