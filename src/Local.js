@@ -6,8 +6,9 @@ function Local(){
             throw new Error("La cantidad no es valida");
         } 
         for(let i =0;i<cantidad;i++){
-            colaDeSalida.push(new Paquete(this.darDestino(filas),this.darUrgencia(),columnas));
-            
+            let paquete=new Paquete(this.darDestino(filas),this.darUrgencia(),columnas)
+            colaDeSalida.push(paquete);
+            console.log("Creando paquete "+paquete.id +", con destino "+paquete.destino+" y urgencia "+paquete.urgencia)
         }
     }
     this.procesarPaquetes=(colaDeEspera,colaDeSalida)=>{}
@@ -17,7 +18,7 @@ function Local(){
         return choices[Math.floor(Math.random()*choices.length)];
     }
     this.darDestino=(filas)=>{
-        return Math.floor(Math.random()*filas);
+        return Math.floor(Math.random()*filas)+1;
     }
 }
 

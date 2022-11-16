@@ -18,8 +18,8 @@ mapa.pasarTurno();
 let texto="";
 
 
-for (let k=0; k<6;k++){
-    console.log("\n\nTurno "+k+"\n");
+for (let k=0; k<9;k++){
+    console.log("\nTurno "+k+"\n");
     console.log(mapa.pasarTurno(0));
     for (let i=0; i<4;i++){
         console.log("|| Local " +i+"-> S="+mapa.filas[i][0].colaDeSalida.length +
