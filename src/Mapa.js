@@ -72,7 +72,7 @@ function Mapa(filas,columnas){
         }
         if (posicion[0]<this.cantidadFilas-1 
             && posicion[1]<this.cantidadColumnas-2 
-            && cantDiagonalesSiBaja<=cantMovidas-1){
+            && cantDiagonalesSiBaja>=cantMovidas-1){
             return true;
         } else{
             return false;
